@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0.23
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - '3307:3306'
+    volumes:
+      - ./tmp/mysql:/var/lib/mysql
+  api:
+    tty: true
+    stdin_open: true
+    build: .
+    command: rails s -b 0.0.0.0
+    volumes:
+      - .:/app
+    environment:
+      DB_HOST: db
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
