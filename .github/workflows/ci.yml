@@ -2,6 +2,13 @@ name: CI
 
 on:
   push:
+    branches:
+      - 'feature/*'
+      - main
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
 
 jobs:
   rspec:
