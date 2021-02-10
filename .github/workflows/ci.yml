@@ -14,7 +14,8 @@ jobs:
     services:
       db:
         image: mysql:8.0.23
-        options: --default-authentication-plugin=mysql_native_password
+        volumes:
+          - mysql/conf.d:/etc/mysql/conf.d
         ports:
           - 33060:3306
         env:
