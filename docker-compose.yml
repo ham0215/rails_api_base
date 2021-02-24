@@ -5,9 +5,9 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
-      - '3307:3306'
+      - '3308:3306'
     volumes:
-      - ./mysqlconf.d:/etc/mysql/conf.d
+      - ./mysqlcnf.d:/etc/mysql/conf.d
       - ./tmp/mysql:/var/lib/mysql
   api:
     tty: true
