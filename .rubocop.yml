@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'config.ru'
+    - 'db/**/*'
+    - 'Gemfile'
+    - 'spec/**/*'
+    - 'vendor/**/*'
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
