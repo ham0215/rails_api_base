@@ -1,0 +1,55 @@
+name: seed
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+      - main
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      RAILS_ENV: development
+      DB_HOST: 127.0.0.1
+      DB_PORT: 33060
+    services:
+      db:
+        image: mysql:8.0.23
+        ports:
+          - 33060:3306
+        env:
+          MYSQL_USER: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          BIND-ADDRESS: 0.0.0.0
+        volumes:
+          - mysql-confd:/etc/mysql/conf.d
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1.66.0
+        with:
+          ruby-version: 3.0.0
+          bundler-cache: true
+      - name: Cache gems
+        uses: actions/cache@v2.1.4
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: bundle install
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3 --path vendor/bundle
+      - name: migration
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:schema:load
+      - name: run seed_fu
+        run: bundle exec rails db:seed_fu
