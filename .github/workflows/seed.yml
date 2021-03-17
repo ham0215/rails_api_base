@@ -21,14 +21,14 @@ jobs:
     services:
       db:
         image: mysql:8.0.23
+        volumes:
+          - mysqlconf.d:/etc/mysql/conf.d
         ports:
           - 33060:3306
         env:
           MYSQL_USER: root
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           BIND-ADDRESS: 0.0.0.0
-        volumes:
-          - mysql-confd:/etc/mysql/conf.d
     steps:
       - uses: actions/checkout@v2.3.4
       - name: Set up Ruby
