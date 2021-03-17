@@ -1,0 +1,29 @@
+name: RuboCop
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+      - main
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
+      - 'spec/**'
+      - 'docs/**'
+      - 'db/**'
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1.66.0
+        with:
+          ruby-version: 3.0.0
+          bundler-cache: true
+      - name: run rubocop
+        run: |
+          gem install rubocop
+          rubocop
