@@ -7,8 +7,6 @@ class User < ApplicationRecord
   private
 
   def ng_name
-    return unless name == 'ham'
-
-    errors.add :name, 'hamは使えません'
+    errors.add(:name, 'にhamは使えません') if name == 'ham'
   end
 end
