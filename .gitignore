@@ -31,3 +31,7 @@
 coverage
 
 .DS_Store
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
