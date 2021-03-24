@@ -13,6 +13,6 @@ class User < ApplicationRecord
   private
 
   def ng_name
-    errors.add(:name, 'にNGNAMEは使えません') if name == 'NGNAME'
+    errors.add(:name, :ng_name) if name == 'NGNAME'
   end
 end

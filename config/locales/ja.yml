@@ -1,11 +1,16 @@
 ja:
   activerecord:
+    attributes:
+      user:
+        name: 名前
+        locale: 言語
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+        ng_name: に'NGNAME'は使えません
   date:
     abbr_day_names:
     - 日
