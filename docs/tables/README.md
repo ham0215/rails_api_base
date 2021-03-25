@@ -6,7 +6,7 @@
 | ---- | ------- | ------- | ---- |
 | [ar_internal_metadata](ar_internal_metadata.md) | 4 |  | BASE TABLE |
 | [schema_migrations](schema_migrations.md) | 1 |  | BASE TABLE |
-| [users](users.md) | 4 |  | BASE TABLE |
+| [users](users.md) | 5 |  | BASE TABLE |
 
 ## Relations
 
