@@ -27,6 +27,7 @@ services:
       - "3001:3000"
     depends_on:
       - db
+      - redis
   tbls:
     image: k1low/tbls:latest
     volumes:
