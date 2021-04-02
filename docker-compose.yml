@@ -9,6 +9,10 @@ services:
     volumes:
       - ./mysqlcnf.d:/etc/mysql/conf.d
       - ./tmp/mysql:/var/lib/mysql
+  redis:
+    image: redis:6.0.9
+    ports:
+      - '6380:6379'
   api:
     tty: true
     stdin_open: true
@@ -23,6 +27,7 @@ services:
       - "3001:3000"
     depends_on:
       - db
+      - redis
   tbls:
     image: k1low/tbls:latest
     volumes:
