@@ -37,13 +37,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install libmysqlclient-dev jq
-      - name: Cache gems
-        uses: actions/cache@v2.1.4
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
       - name: bundle install
         run: |
           gem install bundler
