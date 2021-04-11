@@ -41,5 +41,6 @@ module App
 
     config.action_mailer.delivery_method = :sendgrid
     config.action_mailer.deliver_later_queue_name = 'mailers'
+    config.action_mailer.raise_delivery_errors = true
   end
 end
