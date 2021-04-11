@@ -8,6 +8,7 @@ class SendGridService
   end
 
   def deliver!(mail)
+    byebug
     from = SendGrid::Email.new(email: 'test@example.com')
     to = SendGrid::Email.new(email: 'test@example.com')
     subject = mail.subject
