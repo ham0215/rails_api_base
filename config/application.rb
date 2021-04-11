@@ -40,5 +40,6 @@ module App
     config.active_job.queue_adapter = :sidekiq
 
     config.action_mailer.delivery_method = :sendgrid
+    config.action_mailer.deliver_later_queue_name = 'mailers'
   end
 end
