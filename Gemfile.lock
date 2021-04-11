@@ -216,9 +216,12 @@ GEM
     rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
     ruby-progressbar (1.11.0)
+    ruby_http_client (3.5.2)
     seed-fu (2.3.9)
       activerecord (>= 3.1)
       activesupport (>= 3.1)
+    sendgrid-ruby (6.4.0)
+      ruby_http_client (~> 3.4)
     sidekiq (6.2.0)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -265,6 +268,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   seed-fu
+  sendgrid-ruby
   sidekiq
   simplecov
   simplecov-json

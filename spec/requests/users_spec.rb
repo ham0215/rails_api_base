@@ -17,11 +17,11 @@ RSpec.describe "/users", type: :request do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { name: Faker::Name.name }
+    { name: Faker::Name.name, email: Faker::Internet.email }
   }
 
   let(:invalid_attributes) {
-    { name: '' }
+    { name: '', email: '' }
   }
 
   # This should return the minimal set of values that should be in the headers
