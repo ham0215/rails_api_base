@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validate :ng_name
   validates :locale, presence: true, inclusion: { in: locales.keys }
 
+  has_one_attached :avatar
+
   private
 
   def ng_name
