@@ -4,9 +4,12 @@
 
 | Name | Columns | Comment | Type |
 | ---- | ------- | ------- | ---- |
+| [active_storage_attachments](active_storage_attachments.md) | 6 |  | BASE TABLE |
+| [active_storage_blobs](active_storage_blobs.md) | 9 |  | BASE TABLE |
+| [active_storage_variant_records](active_storage_variant_records.md) | 3 |  | BASE TABLE |
 | [ar_internal_metadata](ar_internal_metadata.md) | 4 |  | BASE TABLE |
 | [schema_migrations](schema_migrations.md) | 1 |  | BASE TABLE |
-| [users](users.md) | 5 |  | BASE TABLE |
+| [users](users.md) | 6 |  | BASE TABLE |
 
 ## Relations
 
