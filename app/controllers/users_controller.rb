@@ -40,6 +40,14 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  def avatar
+    user = User.find params[:user_id]
+    user.avatar.attach params[:avatar]
+    raise 'バリデーションエラー' if user.invalid?
+
+    head :ok
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
