@@ -41,6 +41,10 @@ class UsersController < ApplicationController
   end
 
   def avatar
+    user = User.find params[:user_id]
+    user.avatar.attach params[:avatar]
+
+    head :ok
   end
 
   private

@@ -45,5 +45,7 @@ module App
 
     config.active_storage.routes_prefix = '/attachments'
     config.active_storage.draw_routes = false
+
+    config.middleware.use ActionDispatch::Flash
   end
 end
