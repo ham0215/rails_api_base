@@ -40,6 +40,9 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  def avatar
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
