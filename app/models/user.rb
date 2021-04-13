@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :locale, presence: true, inclusion: { in: locales.keys }
 
   has_one_attached :avatar
+  validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 4.megabytes }
 
   private
 

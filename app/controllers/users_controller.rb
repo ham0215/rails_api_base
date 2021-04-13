@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   def avatar
     user = User.find params[:user_id]
     user.avatar.attach params[:avatar]
+    raise 'バリデーションエラー' if user.invalid?
 
     head :ok
   end
