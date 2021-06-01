@@ -1,4 +1,4 @@
-# users
+# user_books
 
 ## Description
 
@@ -6,14 +6,17 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `users` (
+CREATE TABLE `user_books` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `locale` int NOT NULL DEFAULT '0',
+  `user_id` bigint NOT NULL,
+  `book_id` bigint NOT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `book_id` (`book_id`),
+  CONSTRAINT `book_id_on_user_books` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `user_id_on_user_books` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
@@ -23,10 +26,9 @@ CREATE TABLE `users` (
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
-| id | bigint |  | false | auto_increment | [user_books](user_books.md) |  |  |
-| name | varchar(255) |  | true |  |  |  |  |
-| email | varchar(255) |  | false |  |  |  |  |
-| locale | int | 0 | false |  |  |  |  |
+| id | bigint |  | false | auto_increment |  |  |  |
+| user_id | bigint |  | false |  |  | [users](users.md) |  |
+| book_id | bigint |  | false |  |  | [books](books.md) |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -34,17 +36,21 @@ CREATE TABLE `users` (
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| book_id_on_user_books | FOREIGN KEY | FOREIGN KEY (book_id) REFERENCES books (id) |
 | PRIMARY | PRIMARY KEY | PRIMARY KEY (id) |
+| user_id_on_user_books | FOREIGN KEY | FOREIGN KEY (user_id) REFERENCES users (id) |
 
 ## Indexes
 
 | Name | Definition |
 | ---- | ---------- |
+| book_id | KEY book_id (book_id) USING BTREE |
+| user_id | KEY user_id (user_id) USING BTREE |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
 
 ## Relations
 
-![er](users.svg)
+![er](user_books.svg)
 
 ---
 

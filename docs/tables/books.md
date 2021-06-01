@@ -1,4 +1,4 @@
-# users
+# books
 
 ## Description
 
@@ -6,11 +6,9 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `users` (
+CREATE TABLE `books` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `locale` int NOT NULL DEFAULT '0',
+  `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
@@ -24,9 +22,7 @@ CREATE TABLE `users` (
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment | [user_books](user_books.md) |  |  |
-| name | varchar(255) |  | true |  |  |  |  |
-| email | varchar(255) |  | false |  |  |  |  |
-| locale | int | 0 | false |  |  |  |  |
+| title | varchar(255) |  | false |  |  |  |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -44,7 +40,7 @@ CREATE TABLE `users` (
 
 ## Relations
 
-![er](users.svg)
+![er](books.svg)
 
 ---
 

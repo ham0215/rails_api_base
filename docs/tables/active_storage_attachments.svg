@@ -34,7 +34,7 @@
 <text text-anchor="start" x="365.0168" y="-513.9" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
 <polygon fill="none" stroke="#000000" points="309,-472.5 309,-502.5 645,-502.5 645,-472.5 309,-472.5"/>
 <text text-anchor="start" x="316" y="-483.9" font-family="Arial" font-size="14.00" fill="#000000">created_at </text>
-<text text-anchor="start" x="386.028" y="-483.9" font-family="Arial" font-size="14.00" fill="#666666">[datetime]</text>
+<text text-anchor="start" x="386.028" y="-483.9" font-family="Arial" font-size="14.00" fill="#666666">[datetime(6)]</text>
 <polygon fill="none" stroke="#000000" stroke-width="3" points="307.5,-471.5 307.5,-689.5 646.5,-689.5 646.5,-471.5 307.5,-471.5"/>
 </g>
 <!-- active_storage_blobs -->
@@ -71,7 +71,7 @@
 <text text-anchor="start" x="409.899" y="-83.9" font-family="Arial" font-size="14.00" fill="#666666">[varchar(255)]</text>
 <polygon fill="none" stroke="#000000" points="336,-42.5 336,-72.5 617,-72.5 617,-42.5 336,-42.5"/>
 <text text-anchor="start" x="343" y="-53.9" font-family="Arial" font-size="14.00" fill="#000000">created_at </text>
-<text text-anchor="start" x="413.028" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[datetime]</text>
+<text text-anchor="start" x="413.028" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[datetime(6)]</text>
 </g>
 <!-- active_storage_attachments&#45;&gt;active_storage_blobs -->
 <g id="edge1" class="edge">

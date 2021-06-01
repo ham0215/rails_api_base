@@ -6,6 +6,8 @@ class User < ApplicationRecord
     ja: 1,
   }
 
+  has_many :user_books, dependent: :deleta_all
+
   validates :name, presence: true
   validate :ng_name
   validates :locale, presence: true, inclusion: { in: locales.keys }

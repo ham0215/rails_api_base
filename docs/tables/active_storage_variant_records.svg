@@ -62,7 +62,7 @@
 <text text-anchor="start" x="422.899" y="-83.9" font-family="Arial" font-size="14.00" fill="#666666">[varchar(255)]</text>
 <polygon fill="none" stroke="#000000" points="349,-42.5 349,-72.5 630,-72.5 630,-42.5 349,-42.5"/>
 <text text-anchor="start" x="356" y="-53.9" font-family="Arial" font-size="14.00" fill="#000000">created_at </text>
-<text text-anchor="start" x="426.028" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[datetime]</text>
+<text text-anchor="start" x="426.028" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[datetime(6)]</text>
 </g>
 <!-- active_storage_variant_records&#45;&gt;active_storage_blobs -->
 <g id="edge1" class="edge">
