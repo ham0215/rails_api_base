@@ -38,6 +38,8 @@ group :development do
   gem 'rubocop', require: false
 
   gem 'brakeman'
+
+  gem 'graphiql-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
