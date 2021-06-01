@@ -221,6 +221,9 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.7.0)
       parser (>= 3.0.1.1)
+    rubocop-rspec (2.3.0)
+      rubocop (~> 1.0)
+      rubocop-ast (>= 1.1.0)
     ruby-progressbar (1.11.0)
     ruby_http_client (3.5.2)
     seed-fu (2.3.9)
@@ -276,6 +279,7 @@ DEPENDENCIES
   rails
   rspec-rails
   rubocop
+  rubocop-rspec
   seed-fu
   sendgrid-ruby
   sidekiq
