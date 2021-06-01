@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # 下記から必要な箇所を転機
   # https://github.com/rails/rails/blob/v6.1.3.1/activestorage/config/routes.rb
   #
-  raise 'バージョンアップしたので下記コピペコードも確認' unless ActiveStorage.version.to_s == '6.1.3.1'
+  raise 'バージョンアップしたので下記コピペコードも確認' unless ActiveStorage.version.to_s == '6.1.3.2'
 
   scope ActiveStorage.routes_prefix do
     get "/blobs/redirect/:signed_id/*filename" => "active_storage/blobs/redirect#show", as: :rails_service_blob
