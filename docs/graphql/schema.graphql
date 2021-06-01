@@ -1,6 +1,6 @@
 type Book {
   id: Int!
-  name: String!
+  title: String!
 }
 
 """
@@ -168,7 +168,7 @@ type User {
   email: String!
   id: Int!
   name: String!
-  portfolio(
+  portfolios(
     """
     Returns the elements in the list that come after the specified cursor.
     """

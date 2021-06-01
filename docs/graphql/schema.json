@@ -33,7 +33,7 @@
               "deprecationReason": null
             },
             {
-              "name": "name",
+              "name": "title",
               "description": null,
               "args": [
 
@@ -735,7 +735,7 @@
               "deprecationReason": null
             },
             {
-              "name": "portfolio",
+              "name": "portfolios",
               "description": null,
               "args": [
                 {
