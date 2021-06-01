@@ -6,25 +6,7 @@
 [![Tbls](https://github.com/ham0215/rails_api_base/actions/workflows/tbls.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/tbls.yml)
 [![seed](https://github.com/ham0215/rails_api_base/actions/workflows/seed.yml/badge.svg?branch=feature%2Frspec)](https://github.com/ham0215/rails_api_base/actions/workflows/seed.yml)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RailsでAPI(GraphQL)を作るためのテンプレート
 
-Things you may want to cover:
+https://qiita.com/ham0215/items/54287e3793ed81558425
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
