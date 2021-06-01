@@ -16,6 +16,9 @@ require: rubocop-rspec
 Style/Documentation:
   Enabled: false
 
+Style/EmptyCaseCondition:
+  Enabled: false
+
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
@@ -24,3 +27,9 @@ Metrics/AbcSize:
 
 Metrics/MethodLength:
   Max: 20
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
