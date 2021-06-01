@@ -53,4 +53,9 @@ Rails.application.configure do
   config.active_job.queue_adapter = :test
 
   config.action_mailer.delivery_method = :test
+
+  config.after_initialize do
+    Bullet.enable = ENV['BULLET'].present?
+    Bullet.bullet_logger = true
+  end
 end
