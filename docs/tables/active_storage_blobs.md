@@ -15,7 +15,7 @@ CREATE TABLE `active_storage_blobs` (
   `service_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `byte_size` bigint NOT NULL,
   `checksum` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `created_at` datetime NOT NULL,
+  `created_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_active_storage_blobs_on_key` (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
@@ -35,7 +35,7 @@ CREATE TABLE `active_storage_blobs` (
 | service_name | varchar(255) |  | false |  |  |  |  |
 | byte_size | bigint |  | false |  |  |  |  |
 | checksum | varchar(255) |  | false |  |  |  |  |
-| created_at | datetime |  | false |  |  |  |  |
+| created_at | datetime(6) |  | false |  |  |  |  |
 
 ## Constraints
 

@@ -1,0 +1,24 @@
+name: gqldoc
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/graphql/*'
+      - 'docs/gqldoc/*'
+
+jobs:
+  gqldoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Push Generated GraphQL Document Current Branch
+        uses: Code-Hex/gqldoc-actions@v1.0.8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          schema: docs/graphql/schema.graphql
+          output: docs/gqldoc

@@ -9,9 +9,10 @@ on:
       - README.md
       - Dockerfile
       - docker-compose.yml
-      - 'spec/**'
       - 'docs/**'
       - 'db/**'
+      - 'spec/spec_helper.rb'
+      - 'spec/rails_helper.rb'
 
 jobs:
   rubocop:
@@ -25,5 +26,5 @@ jobs:
           bundler-cache: true
       - name: run rubocop
         run: |
-          gem install rubocop
+          gem install rubocop rubocop-rspec
           rubocop

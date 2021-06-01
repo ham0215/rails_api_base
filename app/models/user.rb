@@ -6,6 +6,11 @@ class User < ApplicationRecord
     ja: 1,
   }
 
+  has_one :profile, dependent: :destroy
+  has_many :portfolios, dependent: :delete_all
+  has_many :user_books, dependent: :delete_all
+  has_many :books, through: :user_books
+
   validates :name, presence: true
   validate :ng_name
   validates :locale, presence: true, inclusion: { in: locales.keys }
