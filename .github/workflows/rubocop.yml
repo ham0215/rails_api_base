@@ -26,5 +26,5 @@ jobs:
           bundler-cache: true
       - name: run rubocop
         run: |
-          gem install rubocop
+          gem install rubocop rubocop-rspec
           rubocop
