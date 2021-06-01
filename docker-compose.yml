@@ -23,6 +23,7 @@ services:
     environment:
       DB_HOST: db
       EDITOR: vim
+      BULLET: 1
     ports:
       - "3001:3000"
     depends_on:
