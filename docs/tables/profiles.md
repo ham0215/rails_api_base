@@ -1,4 +1,4 @@
-# users
+# profiles
 
 ## Description
 
@@ -6,14 +6,15 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `users` (
+CREATE TABLE `profiles` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `locale` int NOT NULL DEFAULT '0',
+  `user_id` bigint NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `user_id_on_profiles` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
@@ -23,10 +24,9 @@ CREATE TABLE `users` (
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
-| id | bigint |  | false | auto_increment | [portfolios](portfolios.md) [profiles](profiles.md) [user_books](user_books.md) |  |  |
-| name | varchar(255) |  | true |  |  |  |  |
-| email | varchar(255) |  | false |  |  |  |  |
-| locale | int | 0 | false |  |  |  |  |
+| id | bigint |  | false | auto_increment |  |  |  |
+| user_id | bigint |  | false |  |  | [users](users.md) |  |
+| address | varchar(255) |  | true |  |  |  |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -35,16 +35,18 @@ CREATE TABLE `users` (
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
 | PRIMARY | PRIMARY KEY | PRIMARY KEY (id) |
+| user_id_on_profiles | FOREIGN KEY | FOREIGN KEY (user_id) REFERENCES users (id) |
 
 ## Indexes
 
 | Name | Definition |
 | ---- | ---------- |
+| user_id | KEY user_id (user_id) USING BTREE |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
 
 ## Relations
 
-![er](users.svg)
+![er](profiles.svg)
 
 ---
 

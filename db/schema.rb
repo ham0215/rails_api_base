@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_01_023617) do
+ActiveRecord::Schema.define(version: 2021_06_01_030441) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,23 @@ ActiveRecord::Schema.define(version: 2021_06_01_023617) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "portfolios", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.string "url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "user_id"
+  end
+
+  create_table "profiles", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "user_id"
+  end
+
   create_table "user_books", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
@@ -65,6 +82,8 @@ ActiveRecord::Schema.define(version: 2021_06_01_023617) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "portfolios", "users", name: "user_id_on_portfolios", on_delete: :cascade
+  add_foreign_key "profiles", "users", name: "user_id_on_profiles", on_delete: :cascade
   add_foreign_key "user_books", "books", name: "book_id_on_user_books", on_delete: :cascade
   add_foreign_key "user_books", "users", name: "user_id_on_user_books", on_delete: :cascade
 end

@@ -10,6 +10,12 @@ Book.seed(:id,
 
 books = Book.all
 User.all.each do |user|
+  Profile.seed(user: user, address: '住所だよ')
+  Portfolio.seed(
+    { user: user, name: 'ポートフォリオ1', url: 'url1' },
+    { user: user, name: 'ポートフォリオ2', url: 'url2' }
+  )
+
   books.each do |book|
     UserBook.seed(user: user, book: book)
   end
