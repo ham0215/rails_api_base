@@ -18,6 +18,10 @@ class User < ApplicationRecord
   has_one_attached :avatar
   validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 4.megabytes }
 
+  def profile_loader
+    RecordLoader.for(Profile, column: 'user_id').load(id)
+  end
+
   private
 
   def ng_name

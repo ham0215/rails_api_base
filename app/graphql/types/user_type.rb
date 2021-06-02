@@ -5,7 +5,7 @@ module Types
     field :id, Integer, null: false
     field :name, String, null: false
     field :email, String, null: false
-    field :profile, Types::ProfileType, null: true
+    field :profile, Types::ProfileType, null: true, method: :profile_loader
     field :portfolios, Types::PortfolioType.connection_type, null: false
     field :books, Types::BookType.connection_type, null: false
   end

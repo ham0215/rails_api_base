@@ -20,7 +20,6 @@ gem 'sendgrid-ruby'
 gem 'active_storage_validations'
 
 gem 'graphql'
-gem 'batch-loader'
 gem 'graphql-batch'
 
 group :development, :test do
