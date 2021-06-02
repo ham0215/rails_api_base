@@ -204,6 +204,114 @@
     <td><strong>id</strong> (<a href="scalars.md#int">Int!</a>)</td> 
     <td></td>
   </tr>
+  <tr>
+    <td><strong>skills</strong> (<a href="objects.md#skillconnection">SkillConnection!</a>)</td> 
+    <td>
+      <p></p>
+      <table>
+        <tr>
+          <th><strong>Arguments</strong></th>
+        </tr>
+        <tr>
+          <td>
+            <p>after (<a href="scalars.md#string">String</a>)</p>
+            <p><p>Returns the elements in the list that come after the specified cursor.</p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>before (<a href="scalars.md#string">String</a>)</p>
+            <p><p>Returns the elements in the list that come before the specified cursor.</p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>first (<a href="scalars.md#int">Int</a>)</p>
+            <p><p>Returns the first <em>n</em> elements from the list.</p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>last (<a href="scalars.md#int">Int</a>)</p>
+            <p><p>Returns the last <em>n</em> elements from the list.</p></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+---
+
+### Skill
+
+  
+
+#### Fields
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.md#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.md#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+---
+
+### SkillConnection
+
+<p>The connection type for Skill.</p>  
+
+#### Fields
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>edges</strong> (<a href="objects.md#skilledge">[SkillEdge]</a>)</td> 
+    <td><p>A list of edges.</p></td>
+  </tr>
+  <tr>
+    <td><strong>nodes</strong> (<a href="objects.md#skill">[Skill]</a>)</td> 
+    <td><p>A list of nodes.</p></td>
+  </tr>
+  <tr>
+    <td><strong>pageInfo</strong> (<a href="objects.md#pageinfo">PageInfo!</a>)</td> 
+    <td><p>Information to aid in pagination.</p></td>
+  </tr>
+</table>
+
+---
+
+### SkillEdge
+
+<p>An edge in a connection.</p>  
+
+#### Fields
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>cursor</strong> (<a href="scalars.md#string">String!</a>)</td> 
+    <td><p>A cursor for use in pagination.</p></td>
+  </tr>
+  <tr>
+    <td><strong>node</strong> (<a href="objects.md#skill">Skill</a>)</td> 
+    <td><p>The item at the end of the edge.</p></td>
+  </tr>
 </table>
 
 ---
