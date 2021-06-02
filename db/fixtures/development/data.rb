@@ -10,7 +10,11 @@ Book.seed(:id,
 
 books = Book.all
 User.all.each do |user|
-  Profile.seed(user: user, address: '住所だよ')
+  profile = Profile.seed(user: user, address: '住所だよ').first
+  Skill.seed(
+    { profile: profile, name: 'Ruby' },
+    { profile: profile, name: 'Javascript' }
+  )
   Portfolio.seed(
     { user: user, name: 'ポートフォリオ1', url: 'url1' },
     { user: user, name: 'ポートフォリオ2', url: 'url2' }
