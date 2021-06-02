@@ -1,4 +1,4 @@
-# profiles
+# skills
 
 ## Description
 
@@ -6,15 +6,15 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `profiles` (
+CREATE TABLE `skills` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `user_id` bigint NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `profile_id` bigint NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `user_id_on_profiles` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+  KEY `profile_id` (`profile_id`),
+  CONSTRAINT `profile_id_on_skills` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
@@ -24,9 +24,9 @@ CREATE TABLE `profiles` (
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
-| id | bigint |  | false | auto_increment | [skills](skills.md) |  |  |
-| user_id | bigint |  | false |  |  | [users](users.md) |  |
-| address | varchar(255) |  | true |  |  |  |  |
+| id | bigint |  | false | auto_increment |  |  |  |
+| profile_id | bigint |  | false |  |  | [profiles](profiles.md) |  |
+| name | varchar(255) |  | false |  |  |  |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -35,18 +35,18 @@ CREATE TABLE `profiles` (
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
 | PRIMARY | PRIMARY KEY | PRIMARY KEY (id) |
-| user_id_on_profiles | FOREIGN KEY | FOREIGN KEY (user_id) REFERENCES users (id) |
+| profile_id_on_skills | FOREIGN KEY | FOREIGN KEY (profile_id) REFERENCES profiles (id) |
 
 ## Indexes
 
 | Name | Definition |
 | ---- | ---------- |
-| user_id | KEY user_id (user_id) USING BTREE |
+| profile_id | KEY profile_id (profile_id) USING BTREE |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
 
 ## Relations
 
-![er](profiles.svg)
+![er](skills.svg)
 
 ---
 
