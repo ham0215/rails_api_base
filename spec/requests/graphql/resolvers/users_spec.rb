@@ -13,7 +13,9 @@ RSpec.describe Resolvers::Users, type: :request do
     before do
       books
       users.each do |user|
-        create(:profile, user: user)
+        profile = create(:profile, user: user)
+        create(:skill, profile: profile, name: 'Ruby')
+        create(:skill, profile: profile, name: 'Javascript')
         create_list(:portfolio, 3, user: user)
         books.each do |book|
           create(:user_book, user: user, book: book)
@@ -54,6 +56,11 @@ RSpec.describe Resolvers::Users, type: :request do
                 name
                 profile {
                   address
+                  skills {
+                    nodes {
+                      name
+                    }
+                  }
                 }
                 portfolios {
                   nodes {
