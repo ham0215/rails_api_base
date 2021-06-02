@@ -8,9 +8,5 @@ module Types
     field :profile, Types::ProfileType, null: true
     field :portfolios, Types::PortfolioType.connection_type, null: false
     field :books, Types::BookType.connection_type, null: false
-
-    def profile
-      dataloader.with(Sources::ActiveRecordObject, User, :profile).load(object.id)
-    end
   end
 end
