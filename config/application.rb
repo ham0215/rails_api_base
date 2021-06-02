@@ -47,5 +47,6 @@ module App
     config.active_storage.draw_routes = false
 
     config.middleware.use ActionDispatch::Flash
+    config.middleware.use BatchLoader::Middleware
   end
 end
