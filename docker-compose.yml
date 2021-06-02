@@ -17,7 +17,7 @@ services:
     tty: true
     stdin_open: true
     build: .
-    command: tail -f /dev/null #rails s -b 0.0.0.0
+    command: tail -f /dev/null # rails s -b 0.0.0.0
     volumes:
       - .:/app
     environment:
