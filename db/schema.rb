@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_01_030441) do
+ActiveRecord::Schema.define(version: 2021_06_02_015145) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(version: 2021_06_01_030441) do
     t.index ["user_id"], name: "user_id"
   end
 
+  create_table "skills", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "profile_id"
+  end
+
   create_table "user_books", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
@@ -84,6 +92,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_030441) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "portfolios", "users", name: "user_id_on_portfolios", on_delete: :cascade
   add_foreign_key "profiles", "users", name: "user_id_on_profiles", on_delete: :cascade
+  add_foreign_key "skills", "profiles", name: "profile_id_on_skills", on_delete: :cascade
   add_foreign_key "user_books", "books", name: "book_id_on_user_books", on_delete: :cascade
   add_foreign_key "user_books", "users", name: "user_id_on_user_books", on_delete: :cascade
 end
