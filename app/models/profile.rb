@@ -5,6 +5,6 @@ class Profile < ApplicationRecord
   has_many :skills, dependent: :delete_all
 
   def skills_loader
-    AssociationLoader.for(Profile, 'skills').load(self)
+    AssociationLoader.for(Profile, :skills).load(self)
   end
 end
