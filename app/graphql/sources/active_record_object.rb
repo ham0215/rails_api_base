@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Sources::ActiveRecordObject < GraphQL::Dataloader::Source
   def initialize(model_class, association_name)
     @model_class = model_class
