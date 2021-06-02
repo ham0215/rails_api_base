@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 4.megabytes }
 
   def profile_loader
-    RecordLoader.for(Profile, column: :user_id).load(id)
+    AssociationLoader.for(User, :profile).load(self)
   end
 
   def portfolios_loader
