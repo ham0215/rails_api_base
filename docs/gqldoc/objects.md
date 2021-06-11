@@ -77,6 +77,41 @@
 
 ---
 
+### BookImage
+
+  
+
+#### Fields
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>book</strong> (<a href="objects.md#book">Book!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>contentType</strong> (<a href="scalars.md#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.md#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.md#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>path</strong> (<a href="scalars.md#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+---
+
 ### PageInfo
 
 <p>Information about pagination in a connection.</p>  
