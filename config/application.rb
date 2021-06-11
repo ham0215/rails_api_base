@@ -45,7 +45,6 @@ module App
     config.action_mailer.raise_delivery_errors = true
 
     config.active_storage.routes_prefix = '/attachments'
-    config.active_storage.draw_routes = false
 
     config.middleware.use ActionDispatch::Flash
   end
