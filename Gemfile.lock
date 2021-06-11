@@ -62,6 +62,9 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    apollo_upload_server (2.0.5)
+      actionpack (>= 4.2)
+      graphql (>= 1.8)
     ast (2.4.2)
     brakeman (5.0.4)
     builder (3.2.4)
@@ -273,6 +276,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations
+  apollo_upload_server
   brakeman
   bullet
   byebug

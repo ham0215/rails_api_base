@@ -1,4 +1,4 @@
-# books
+# book_images
 
 ## Description
 
@@ -6,12 +6,14 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `books` (
+CREATE TABLE `book_images` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `book_id` bigint NOT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `book_id` (`book_id`),
+  CONSTRAINT `book_id_on_book_images` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
@@ -21,8 +23,8 @@ CREATE TABLE `books` (
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
-| id | bigint |  | false | auto_increment | [book_images](book_images.md) [user_books](user_books.md) |  |  |
-| title | varchar(255) |  | false |  |  |  |  |
+| id | bigint |  | false | auto_increment |  |  |  |
+| book_id | bigint |  | false |  |  | [books](books.md) |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -30,17 +32,19 @@ CREATE TABLE `books` (
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| book_id_on_book_images | FOREIGN KEY | FOREIGN KEY (book_id) REFERENCES books (id) |
 | PRIMARY | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes
 
 | Name | Definition |
 | ---- | ---------- |
+| book_id | KEY book_id (book_id) USING BTREE |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
 
 ## Relations
 
-![er](books.svg)
+![er](book_images.svg)
 
 ---
 
