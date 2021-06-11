@@ -8,6 +8,7 @@
 | [active_storage_blobs](active_storage_blobs.md) | 9 |  | BASE TABLE |
 | [active_storage_variant_records](active_storage_variant_records.md) | 3 |  | BASE TABLE |
 | [ar_internal_metadata](ar_internal_metadata.md) | 4 |  | BASE TABLE |
+| [book_images](book_images.md) | 4 |  | BASE TABLE |
 | [books](books.md) | 4 |  | BASE TABLE |
 | [portfolios](portfolios.md) | 6 |  | BASE TABLE |
 | [profiles](profiles.md) | 5 |  | BASE TABLE |
