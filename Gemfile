@@ -20,6 +20,7 @@ gem 'sendgrid-ruby'
 gem 'active_storage_validations'
 
 gem 'graphql'
+gem 'graphql-batch'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
