@@ -1,4 +1,7 @@
 # README
+RailsでAPI(GraphQL)を作るためのテンプレート
+
+https://qiita.com/ham0215/items/54287e3793ed81558425
 
 [![Brakeman](https://github.com/ham0215/rails_api_base/actions/workflows/brakeman.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/brakeman.yml)
 [![RSpec](https://github.com/ham0215/rails_api_base/actions/workflows/rspec.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/rspec.yml)
@@ -6,10 +9,6 @@
 [![Tbls](https://github.com/ham0215/rails_api_base/actions/workflows/tbls.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/tbls.yml)
 [![seed](https://github.com/ham0215/rails_api_base/actions/workflows/seed.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/seed.yml)
 [![gqldoc](https://github.com/ham0215/rails_api_base/actions/workflows/gqldoc.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/gqldoc.yml)
-
-RailsでAPI(GraphQL)を作るためのテンプレート
-
-https://qiita.com/ham0215/items/54287e3793ed81558425
 
 ## docker
 
