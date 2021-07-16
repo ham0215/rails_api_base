@@ -13,7 +13,8 @@ CREATE TABLE `users` (
   `locale` int NOT NULL DEFAULT '0',
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_users_on_email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
@@ -34,6 +35,7 @@ CREATE TABLE `users` (
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| index_users_on_email | UNIQUE | UNIQUE KEY index_users_on_email (email) |
 | PRIMARY | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes
@@ -41,6 +43,7 @@ CREATE TABLE `users` (
 | Name | Definition |
 | ---- | ---------- |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
+| index_users_on_email | UNIQUE KEY index_users_on_email (email) USING BTREE |
 
 ## Relations
 
