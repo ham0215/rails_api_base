@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_16_013059) do
+ActiveRecord::Schema.define(version: 2021_09_22_073412) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -58,6 +58,26 @@ ActiveRecord::Schema.define(version: 2021_07_16_013059) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["parent_id"], name: "parent_id"
+  end
+
+  create_table "fugas", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "hoge_id", null: false
+    t.integer "idx_num", default: 0, null: false
+    t.integer "num", default: 0, null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hoge_id"], name: "hoge_id"
+    t.index ["idx_num"], name: "idx_num"
+  end
+
+  create_table "hoges", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.integer "idx_num", default: 0, null: false
+    t.integer "num", default: 0, null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["idx_num"], name: "idx_num"
   end
 
   create_table "parents", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
@@ -113,6 +133,7 @@ ActiveRecord::Schema.define(version: 2021_07_16_013059) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "book_images", "books", name: "book_id_on_book_images", on_delete: :cascade
   add_foreign_key "children", "parents", name: "parent_id_on_children", on_delete: :cascade
+  add_foreign_key "fugas", "hoges", name: "hoge_id_on_fugas", on_delete: :cascade
   add_foreign_key "portfolios", "users", name: "user_id_on_portfolios", on_delete: :cascade
   add_foreign_key "profiles", "users", name: "user_id_on_profiles", on_delete: :cascade
   add_foreign_key "skills", "profiles", name: "profile_id_on_skills", on_delete: :cascade
