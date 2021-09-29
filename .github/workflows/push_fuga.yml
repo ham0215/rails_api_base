@@ -1,7 +1,7 @@
-name: fuga ci
+name: push fuga ci
 
 on:
-  pull_request:
+  push:
     paths:
       - 'fuga/**'
 
