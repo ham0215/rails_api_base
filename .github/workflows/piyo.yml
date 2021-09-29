@@ -1,0 +1,14 @@
+name: piyo ci
+
+on:
+  pull_request:
+    paths:
+      - 'piyo/**'
+
+jobs:
+  hoge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: run piyo
+        run: piyo/main.sh
