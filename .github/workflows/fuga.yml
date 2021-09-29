@@ -1,0 +1,14 @@
+name: fuga ci
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'fuga/**'
+
+jobs:
+  brakeman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: run fuga
+        run: fuga/main.sh

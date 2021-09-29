@@ -1,0 +1,14 @@
+name: hoge ci
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'hoge/**'
+
+jobs:
+  brakeman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: run hoge
+        run: hoge/main.sh
