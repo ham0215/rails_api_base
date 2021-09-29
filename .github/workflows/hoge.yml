@@ -2,7 +2,7 @@ name: hoge ci
 
 on:
   pull_request:
-    paths-ignore:
+    paths:
       - 'hoge/**'
 
 jobs:

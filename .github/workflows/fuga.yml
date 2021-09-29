@@ -2,7 +2,7 @@ name: fuga ci
 
 on:
   pull_request:
-    paths-ignore:
+    paths:
       - 'fuga/**'
 
 jobs:
