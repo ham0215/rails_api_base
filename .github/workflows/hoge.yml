@@ -1,7 +1,7 @@
 name: hoge ci
 
 on:
-  push:
+  pull_request:
     paths:
       - 'hoge/**'
 
