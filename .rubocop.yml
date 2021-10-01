@@ -33,3 +33,6 @@ Lint/UnusedMethodArgument:
 
 Naming/MethodParameterName:
   Enabled: false
+
+Style/NumberedParameters:
+  Enabled: false
