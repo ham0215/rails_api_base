@@ -39,3 +39,10 @@ Fuga.seed(:id,
           { id: 5, hoge_id: 5, idx_num: 5, num: 5, name: 'fuga5' },
           { id: 7, hoge_id: 7, idx_num: 7, num: 7, name: 'fuga7' },
 )
+
+Piyo.seed(:id,
+  { id: 1, idx_num: 1, num: 1, name: 'piyo1' },
+  { id: 3, idx_num: 3, num: 3, name: 'piyo3' },
+  { id: 5, idx_num: 5, num: 5, name: 'piyo5' },
+  { id: 7, idx_num: 7, num: 7, name: 'piyo7' },
+)
