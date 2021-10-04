@@ -9,6 +9,7 @@ https://qiita.com/ham0215/items/54287e3793ed81558425
 [![RuboCop](https://github.com/ham0215/rails_api_base/actions/workflows/rubocop.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/rubocop.yml)
 [![Tbls](https://github.com/ham0215/rails_api_base/actions/workflows/tbls.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/tbls.yml)
 [![seed](https://github.com/ham0215/rails_api_base/actions/workflows/seed.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/seed.yml)
+[![Eager Load](https://github.com/ham0215/rails_api_base/actions/workflows/eager_load.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/eager_load.yml)
 [![gqldoc](https://github.com/ham0215/rails_api_base/actions/workflows/gqldoc.yml/badge.svg?branch=main)](https://github.com/ham0215/rails_api_base/actions/workflows/gqldoc.yml)
 
 ## docker

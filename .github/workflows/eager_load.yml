@@ -44,4 +44,4 @@ jobs:
           bundle exec rails parallel:create
           bundle exec rails parallel:load_schema
       - name: run rspec
-        run: bundle exec rails s
+        run: bundle exec rails s -d
