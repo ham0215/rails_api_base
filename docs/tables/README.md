@@ -11,7 +11,10 @@
 | [book_images](book_images.md) | 4 |  | BASE TABLE |
 | [books](books.md) | 4 |  | BASE TABLE |
 | [children](children.md) | 4 |  | BASE TABLE |
+| [fugas](fugas.md) | 7 |  | BASE TABLE |
+| [hoges](hoges.md) | 6 |  | BASE TABLE |
 | [parents](parents.md) | 4 |  | BASE TABLE |
+| [piyos](piyos.md) | 6 |  | BASE TABLE |
 | [portfolios](portfolios.md) | 6 |  | BASE TABLE |
 | [profiles](profiles.md) | 5 |  | BASE TABLE |
 | [schema_migrations](schema_migrations.md) | 1 |  | BASE TABLE |

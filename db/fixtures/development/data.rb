@@ -25,3 +25,24 @@ User.all.each do |user|
     UserBook.seed(user: user, book: book)
   end
 end
+
+Hoge.seed(:id,
+          { id: 1, idx_num: 1, num: 1, name: 'hoge1' },
+          { id: 3, idx_num: 3, num: 3, name: 'hoge3' },
+          { id: 5, idx_num: 5, num: 5, name: 'hoge5' },
+          { id: 7, idx_num: 7, num: 7, name: 'hoge7' },
+)
+
+Fuga.seed(:id,
+          { id: 1, hoge_id: 1, idx_num: 1, num: 1, name: 'fuga1' },
+          { id: 3, hoge_id: 3, idx_num: 3, num: 3, name: 'fuga3' },
+          { id: 5, hoge_id: 5, idx_num: 5, num: 5, name: 'fuga5' },
+          { id: 7, hoge_id: 7, idx_num: 7, num: 7, name: 'fuga7' },
+)
+
+Piyo.seed(:id,
+  { id: 1, idx_num: 1, num: 1, name: 'piyo1' },
+  { id: 3, idx_num: 3, num: 3, name: 'piyo3' },
+  { id: 5, idx_num: 5, num: 5, name: 'piyo5' },
+  { id: 7, idx_num: 7, num: 7, name: 'piyo7' },
+)
