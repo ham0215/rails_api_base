@@ -1,5 +1,6 @@
 # README
-RailsでAPI(GraphQL)を作るためのテンプレート
+
+Rails で API(GraphQL)を作るためのテンプレート
 
 https://qiita.com/ham0215/items/54287e3793ed81558425
 
@@ -51,7 +52,7 @@ http://localhost:3006/graphiql
 
 #### manual
 
-gqldocを使ってGraphQLのドキュメントを生成しています。
+gqldoc を使って GraphQL のドキュメントを生成しています。
 
 https://github.com/Code-Hex/gqldoc
 
@@ -63,7 +64,7 @@ gqldoc -s docs/graphql/schema.graphql -o docs/gqldoc
 
 #### automatic
 
-下記のGithub Actionsを使ってmainブランチにPUSHしたときに自動生成している
+下記の Github Actions を使って main ブランチに PUSH したときに自動生成している
 
 https://github.com/Code-Hex/gqldoc-actions
 
@@ -76,13 +77,13 @@ https://github.com/ham0215/rails_api_base/blob/main/docs/tables/README.md
 ### 生成方法
 
 下記コマンドでドキュメントを生成します。
-docs/tablesに出力されます。
+docs/tables に出力されます。
 
 ```
 docker-compose run --rm tbls doc --force
 ```
 
-ciでmysqlのスキーマとドキュメントが一致していることを確認しています。
+ci で mysql のスキーマとドキュメントが一致していることを確認しています。
 
 ref: https://github.com/k1LoW/tbls
 
@@ -96,10 +97,9 @@ http://localhost:3001/sidekiq
 
 ## credentials
 
-シークレット情報はcredenaitlsに格納している
+シークレット情報は credenaitls に格納している
 
 ```console
 # edit credentials. env: development, test
 docker-compose exec api rails credentials:edit --environment $env
 ```
-

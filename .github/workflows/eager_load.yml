@@ -1,52 +1,47 @@
-name: Tbls
+name: Eager Load
 
 on:
   pull_request:
-    paths:
-      - 'docs/tables/*'
-      - 'db/**'
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
+      - 'gcp/**'
 
 jobs:
-  tbls:
+  reager-load:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
       RAILS_ENV: development
       DB_HOST: 127.0.0.1
       DB_PORT: 33060
+      EAGER_LOAD: 1
     services:
       db:
         image: mysql:8.0.26
-        volumes:
-          - mysqlconf.d:/etc/mysql/conf.d
         ports:
           - 33060:3306
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           BIND-ADDRESS: 0.0.0.0
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        volumes:
+          - mysql-confd:/etc/mysql/conf.d
     steps:
       - uses: actions/checkout@v2.3.4
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1.81.0
+        uses: ruby/setup-ruby@v1.82.0
         with:
           ruby-version: 3.0.2
           bundler-cache: true
-      - name: apt-get
-        run: |
-          sudo apt-get update
-          sudo apt-get install libmysqlclient-dev jq
       - name: bundle install
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3 --path vendor/bundle
       - name: migration
         run: |
-          bundle exec rails db:create
-          bundle exec rails db:migrate
-      - name: tbls diff
-        uses: docker://k1low/tbls:latest
-        env:
-          TBLS_DSN: mysql://root:@db:3306/app_development
-          TBLS_DOC_PATH: docs/tables
-        with:
-          args: diff
+          bundle exec rails parallel:create
+          bundle exec rails parallel:load_schema
+      - name: run rspec
+        run: bundle exec rails s

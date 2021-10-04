@@ -1,10 +1,7 @@
 name: Brakeman
 
 on:
-  push:
-    branches:
-      - 'feature/*'
-      - main
+  pull_request:
     paths-ignore:
       - README.md
       - Dockerfile

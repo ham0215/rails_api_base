@@ -1,10 +1,7 @@
 name: RSpec
 
 on:
-  push:
-    branches:
-      - 'feature/*'
-      - main
+  pull_request:
     paths-ignore:
       - README.md
       - Dockerfile
@@ -20,7 +17,7 @@ jobs:
       DB_PORT: 33060
     services:
       db:
-        image: mysql:8.0.23
+        image: mysql:8.0.26
         volumes:
           - mysqlconf.d:/etc/mysql/conf.d
         ports:
