@@ -41,7 +41,7 @@ jobs:
           bundle install --jobs 4 --retry 3 --path vendor/bundle
       - name: migration
         run: |
-          bundle exec rails parallel:create
-          bundle exec rails parallel:load_schema
+          bundle exec rails db:create
+          bundle exec rails db:schema:load
       - name: run rspec
         run: bundle exec rails s -d
