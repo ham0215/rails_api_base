@@ -41,8 +41,8 @@ Fuga.seed(:id,
 )
 
 Piyo.seed(:id,
-  { id: 1, idx_num: 1, num: 1, name: 'piyo1' },
-  { id: 3, idx_num: 3, num: 3, name: 'piyo3' },
-  { id: 5, idx_num: 5, num: 5, name: 'piyo5' },
-  { id: 7, idx_num: 7, num: 7, name: 'piyo7' },
+  { id: 3, idx_num: 40, num: 50, name: 'piyo3' },
+  { id: 5, idx_num: 30, num: 60, name: 'piyo5' },
+  { id: 7, idx_num: 20, num: 70, name: 'piyo7' },
+  { id: 9, idx_num: 10, num: 80, name: 'piyo9' },
 )
