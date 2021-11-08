@@ -5,6 +5,12 @@ on:
     paths:
       - 'docs/tables/*'
       - 'db/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/tables/*'
+      - 'db/**'
 
 jobs:
   tbls:

@@ -6,6 +6,13 @@ on:
       - README.md
       - Dockerfile
       - docker-compose.yml
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
 
 jobs:
   rspec:

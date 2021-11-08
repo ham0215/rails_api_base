@@ -8,6 +8,15 @@ on:
       - docker-compose.yml
       - 'spec/**'
       - 'docs/**'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
+      - 'spec/**'
+      - 'docs/**'
 
 jobs:
   brakeman:

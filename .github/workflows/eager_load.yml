@@ -7,6 +7,14 @@ on:
       - Dockerfile
       - docker-compose.yml
       - 'gcp/**'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
+      - 'gcp/**'
 
 jobs:
   reager-load:

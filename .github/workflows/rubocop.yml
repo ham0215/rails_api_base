@@ -10,6 +10,17 @@ on:
       - 'db/**'
       - 'spec/spec_helper.rb'
       - 'spec/rails_helper.rb'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
+      - 'docs/**'
+      - 'db/**'
+      - 'spec/spec_helper.rb'
+      - 'spec/rails_helper.rb'
 
 jobs:
   rubocop:
