@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 2021_11_26_012026) do
   end
 
   create_table "locks", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.integer "not_unique", null: false
-    t.integer "not_index", null: false
+    t.bigint "not_unique", null: false
+    t.bigint "not_index", null: false
     t.index ["not_unique"], name: "not_unique"
   end
 

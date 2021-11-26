@@ -8,8 +8,8 @@
 ```sql
 CREATE TABLE `locks` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `not_unique` int NOT NULL,
-  `not_index` int NOT NULL,
+  `not_unique` bigint NOT NULL,
+  `not_index` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `not_unique` (`not_unique`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
@@ -22,8 +22,8 @@ CREATE TABLE `locks` (
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
-| not_unique | int |  | false |  |  |  |  |
-| not_index | int |  | false |  |  |  |  |
+| not_unique | bigint |  | false |  |  |  |  |
+| not_index | bigint |  | false |  |  |  |  |
 
 ## Constraints
 

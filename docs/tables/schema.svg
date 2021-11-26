@@ -300,10 +300,10 @@
 <text text-anchor="start" x="2441.7798" y="-937.9" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
 <polygon fill="none" stroke="#000000" points="2420,-896.5 2420,-926.5 2572,-926.5 2572,-896.5 2420,-896.5"/>
 <text text-anchor="start" x="2427" y="-907.9" font-family="Arial" font-size="14.00" fill="#000000">not_unique </text>
-<text text-anchor="start" x="2500.1486" y="-907.9" font-family="Arial" font-size="14.00" fill="#666666">[int]</text>
+<text text-anchor="start" x="2500.1486" y="-907.9" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
 <polygon fill="none" stroke="#000000" points="2420,-866.5 2420,-896.5 2572,-896.5 2572,-866.5 2420,-866.5"/>
 <text text-anchor="start" x="2427" y="-877.9" font-family="Arial" font-size="14.00" fill="#000000">not_index </text>
-<text text-anchor="start" x="2491.5834" y="-877.9" font-family="Arial" font-size="14.00" fill="#666666">[int]</text>
+<text text-anchor="start" x="2491.5834" y="-877.9" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
 </g>
 <!-- piyos -->
 <g id="node12" class="node">
