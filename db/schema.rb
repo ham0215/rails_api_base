@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_084715) do
+ActiveRecord::Schema.define(version: 2021_11_26_012026) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -78,6 +78,12 @@ ActiveRecord::Schema.define(version: 2021_10_01_084715) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["idx_num"], name: "idx_num"
+  end
+
+  create_table "locks", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.integer "not_unique", null: false
+    t.integer "not_index", null: false
+    t.index ["not_unique"], name: "not_unique"
   end
 
   create_table "parents", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
