@@ -13,6 +13,7 @@
 | [children](children.md) | 4 |  | BASE TABLE |
 | [fugas](fugas.md) | 7 |  | BASE TABLE |
 | [hoges](hoges.md) | 6 |  | BASE TABLE |
+| [locks](locks.md) | 3 |  | BASE TABLE |
 | [parents](parents.md) | 4 |  | BASE TABLE |
 | [piyos](piyos.md) | 6 |  | BASE TABLE |
 | [portfolios](portfolios.md) | 6 |  | BASE TABLE |

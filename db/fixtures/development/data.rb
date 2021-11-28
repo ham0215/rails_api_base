@@ -46,3 +46,11 @@ Piyo.seed(:id,
   { id: 8, idx_num: 30, num: 70, name: 'piyo8' },
   { id: 9, idx_num: 10, num: 80, name: 'piyo9' },
 )
+
+Lock.seed(:id,
+  { id: 3, not_unique: 103, not_index: 203 },
+  { id: 5, not_unique: 105, not_index: 205 },
+  { id: 8, not_unique: 108, not_index: 208 },
+  { id: 9, not_unique: 109, not_index: 209 },
+)
+
