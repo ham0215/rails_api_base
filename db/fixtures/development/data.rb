@@ -1,6 +1,6 @@
 User.seed(:id,
-          { id: 2, name: 'hoge', email: 'hoge@example.com' },
-          { id: 3, name: 'fuga', email: 'fuga@example.com' },
+          { id: 2, name: 'hoge', email: 'hoge@example.com', nickname: 'hogehgoe' },
+          { id: 3, name: 'fuga', email: 'fuga@example.com', nickname: 'fugafuga' },
 )
 
 User.all.each do |user|

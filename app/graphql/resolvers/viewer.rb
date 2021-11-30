@@ -8,7 +8,7 @@ module Resolvers
 
     def resolve
       # TODO: ログインは未実装なので仮に先頭ユーザーを返す
-      User.first
+      ::User.first
     end
   end
 end
