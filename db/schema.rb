@@ -136,11 +136,13 @@ ActiveRecord::Schema.define(version: 2021_11_26_012026) do
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.string "name"
     t.string "email", null: false
+    t.string "name", null: false
     t.integer "locale", default: 0, null: false
+    t.string "nickname", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "email", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -21,7 +21,7 @@
 | [schema_migrations](schema_migrations.md) | 1 |  | BASE TABLE |
 | [skills](skills.md) | 5 |  | BASE TABLE |
 | [user_books](user_books.md) | 5 |  | BASE TABLE |
-| [users](users.md) | 6 |  | BASE TABLE |
+| [users](users.md) | 7 |  | BASE TABLE |
 
 ## Relations
 
