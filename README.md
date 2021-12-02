@@ -47,7 +47,7 @@ docker-compose exec api rails graphql:schema:dump
 
 ### GraphiQL
 
-http://localhost:3006/graphiql
+http://localhost:3001/graphiql
 
 ### create document
 
