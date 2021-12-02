@@ -8,6 +8,6 @@ module Types
 
     field :users, resolver: Resolvers::Users
     field :viewer, resolver: Resolvers::Viewer
-    field :user, resolver: Resolvers::User
+    field :profile, resolver: Resolvers::Profile
   end
 end

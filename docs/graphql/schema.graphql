@@ -47,9 +47,9 @@ type PageInfo {
 
 type Query {
   """
-  ユーザーを取得する
+  プロフィールを取得する
   """
-  user(userId: Int!): User!
+  profile(userId: Int!): User!
 
   """
   ユーザー一覧を取得する

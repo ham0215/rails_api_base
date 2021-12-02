@@ -306,8 +306,8 @@
           "description": null,
           "fields": [
             {
-              "name": "user",
-              "description": "ユーザーを取得する",
+              "name": "profile",
+              "description": "プロフィールを取得する",
               "args": [
                 {
                   "name": "userId",
