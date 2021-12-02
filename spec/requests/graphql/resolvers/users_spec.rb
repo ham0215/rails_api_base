@@ -8,19 +8,9 @@ RSpec.describe Resolvers::Users, type: :request do
     let(:variables) { {} }
 
     let(:users) { create_list(:user, 3) }
-    let(:books) { create_list(:book, 3) }
 
     before do
-      books
-      users.each do |user|
-        profile = create(:profile, user: user)
-        create(:skill, profile: profile, name: 'Ruby')
-        create(:skill, profile: profile, name: 'Javascript')
-        create_list(:portfolio, 3, user: user)
-        books.each do |book|
-          create(:user_book, user: user, book: book)
-        end
-      end
+      users
     end
 
     shared_examples 'get users' do
@@ -32,54 +22,18 @@ RSpec.describe Resolvers::Users, type: :request do
       end
     end
 
-    context 'user only' do
-      let(:query) do
-        <<~"GQL"
-          query Users {
-            users {
-              nodes {
-                name
-              }
+    let(:query) do
+      <<~"GQL"
+        query Users {
+          users {
+            nodes {
+              name
             }
           }
-        GQL
-      end
-      it_behaves_like 'get users'
+        }
+      GQL
     end
 
-    context 'users with profile, portfolios, books' do
-      let(:query) do
-        <<~"GQL"
-          query Users {
-            users {
-              nodes {
-                name
-                profile {
-                  address
-                  skills {
-                    nodes {
-                      name
-                    }
-                  }
-                }
-                portfolios {
-                  nodes {
-                    name
-                    url
-                  }
-                }
-                books {
-                  nodes {
-                    title
-                  }
-                }
-              }
-            }
-          }
-        GQL
-      end
-
-      it_behaves_like 'get users'
-    end
+    it_behaves_like 'get users'
   end
 end

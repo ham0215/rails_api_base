@@ -8,12 +8,14 @@
 ```sql
 CREATE TABLE `users` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `locale` int NOT NULL DEFAULT '0',
+  `nickname` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
   UNIQUE KEY `index_users_on_email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
@@ -25,9 +27,10 @@ CREATE TABLE `users` (
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment | [portfolios](portfolios.md) [profiles](profiles.md) [user_books](user_books.md) |  |  |
-| name | varchar(255) |  | true |  |  |  |  |
 | email | varchar(255) |  | false |  |  |  |  |
+| name | varchar(255) |  | false |  |  |  |  |
 | locale | int | 0 | false |  |  |  |  |
+| nickname | varchar(255) |  | false |  |  |  |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -35,6 +38,7 @@ CREATE TABLE `users` (
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| email | UNIQUE | UNIQUE KEY email (email) |
 | index_users_on_email | UNIQUE | UNIQUE KEY index_users_on_email (email) |
 | PRIMARY | PRIMARY KEY | PRIMARY KEY (id) |
 
@@ -43,6 +47,7 @@ CREATE TABLE `users` (
 | Name | Definition |
 | ---- | ---------- |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
+| email | UNIQUE KEY email (email) USING BTREE |
 | index_users_on_email | UNIQUE KEY index_users_on_email (email) USING BTREE |
 
 ## Relations
