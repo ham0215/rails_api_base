@@ -69,7 +69,7 @@ GEM
       actionpack (>= 4.2)
       graphql (>= 1.8)
     ast (2.4.2)
-    brakeman (5.1.2)
+    brakeman (5.2.0)
     builder (3.2.4)
     bullet (6.1.5)
       activesupport (>= 3.0.0)
