@@ -22,7 +22,7 @@ CREATE TABLE `book_images` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | book_id | bigint |  | false |  |  | [books](books.md) |  |
 | created_at | datetime(6) |  | false |  |  |  |  |

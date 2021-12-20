@@ -20,7 +20,7 @@ CREATE TABLE `locks` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | not_unique | bigint |  | false |  |  |  |  |
 | not_index | bigint |  | false |  |  |  |  |

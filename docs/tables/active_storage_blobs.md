@@ -14,7 +14,7 @@ CREATE TABLE `active_storage_blobs` (
   `metadata` text COLLATE utf8mb4_general_ci,
   `service_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `byte_size` bigint NOT NULL,
-  `checksum` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `checksum` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_active_storage_blobs_on_key` (`key`)
@@ -26,7 +26,7 @@ CREATE TABLE `active_storage_blobs` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment | [active_storage_attachments](active_storage_attachments.md) [active_storage_variant_records](active_storage_variant_records.md) |  |  |
 | key | varchar(255) |  | false |  |  |  |  |
 | filename | varchar(255) |  | false |  |  |  |  |
@@ -34,7 +34,7 @@ CREATE TABLE `active_storage_blobs` (
 | metadata | text |  | true |  |  |  |  |
 | service_name | varchar(255) |  | false |  |  |  |  |
 | byte_size | bigint |  | false |  |  |  |  |
-| checksum | varchar(255) |  | false |  |  |  |  |
+| checksum | varchar(255) |  | true |  |  |  |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 
 ## Constraints

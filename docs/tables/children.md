@@ -22,7 +22,7 @@ CREATE TABLE `children` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | parent_id | bigint |  | false |  |  | [parents](parents.md) |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
