@@ -299,6 +299,7 @@ DEPENDENCIES
   sidekiq
   simplecov
   simplecov-json
+  sprockets-rails
   tzinfo-data
 
 BUNDLED WITH
