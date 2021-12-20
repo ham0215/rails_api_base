@@ -26,7 +26,7 @@ CREATE TABLE `fugas` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | hoge_id | bigint |  | false |  |  | [hoges](hoges.md) |  |
 | idx_num | int | 0 | false |  |  |  |  |

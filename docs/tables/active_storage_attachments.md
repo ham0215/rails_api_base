@@ -25,7 +25,7 @@ CREATE TABLE `active_storage_attachments` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | name | varchar(255) |  | false |  |  |  |  |
 | record_type | varchar(255) |  | false |  |  |  |  |

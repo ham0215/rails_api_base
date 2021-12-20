@@ -25,7 +25,7 @@ CREATE TABLE `users` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment | [portfolios](portfolios.md) [profiles](profiles.md) [user_books](user_books.md) |  |  |
 | email | varchar(255) |  | false |  |  |  |  |
 | name | varchar(255) |  | false |  |  |  |  |

@@ -24,7 +24,7 @@ CREATE TABLE `portfolios` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | user_id | bigint |  | false |  |  | [users](users.md) |  |
 | name | varchar(255) |  | false |  |  |  |  |
