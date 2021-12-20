@@ -35,6 +35,6 @@ services:
       - .:/work
     environment:
       TBLS_DSN: mysql://root:@db:3306/app_development
-      TBLS_DOC_PATH: docs/tables
+      TBLS_DOC_PATH: /work/docs/tables
     depends_on:
       - db

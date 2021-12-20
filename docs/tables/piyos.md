@@ -23,7 +23,7 @@ CREATE TABLE `piyos` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | idx_num | int | 0 | false |  |  |  |  |
 | num | int | 0 | false |  |  |  |  |

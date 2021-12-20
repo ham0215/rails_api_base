@@ -20,7 +20,7 @@ CREATE TABLE `books` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment | [book_images](book_images.md) [user_books](user_books.md) |  |  |
 | title | varchar(255) |  | false |  |  |  |  |
 | created_at | datetime(6) |  | false |  |  |  |  |

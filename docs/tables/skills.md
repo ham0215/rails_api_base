@@ -23,7 +23,7 @@ CREATE TABLE `skills` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | profile_id | bigint |  | false |  |  | [profiles](profiles.md) |  |
 | name | varchar(255) |  | false |  |  |  |  |

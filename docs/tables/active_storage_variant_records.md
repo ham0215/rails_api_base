@@ -21,7 +21,7 @@ CREATE TABLE `active_storage_variant_records` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
 | blob_id | bigint |  | false |  |  | [active_storage_blobs](active_storage_blobs.md) |  |
 | variation_digest | varchar(255) |  | false |  |  |  |  |

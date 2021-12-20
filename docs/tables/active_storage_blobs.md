@@ -26,7 +26,7 @@ CREATE TABLE `active_storage_blobs` (
 ## Columns
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | --------------- | -------- | ------- | ------- |
+| ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment | [active_storage_attachments](active_storage_attachments.md) [active_storage_variant_records](active_storage_variant_records.md) |  |  |
 | key | varchar(255) |  | false |  |  |  |  |
 | filename | varchar(255) |  | false |  |  |  |  |
