@@ -43,6 +43,8 @@ group :development do
   gem 'brakeman'
 
   gem 'graphiql-rails'
+
+  gem 'sprockets-rails', require: 'sprockets/railtie'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

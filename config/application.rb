@@ -12,7 +12,6 @@ require "action_mailer/railtie"
 # require "action_text/engine"
 require "action_view/railtie"
 # require "action_cable/engine"
-require "sprockets/railtie" if Rails.env.development?
 # require "rails/test_unit/railtie"
 require 'graphql/batch'
 
@@ -23,7 +22,7 @@ Bundler.require(*Rails.groups)
 module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -47,5 +46,10 @@ module App
     config.active_storage.routes_prefix = '/attachments'
 
     config.middleware.use ActionDispatch::Flash
+    if Rails.env.development?
+      config.middleware.use ActionDispatch::Cookies
+      config.middleware.use ActionDispatch::Flash
+      config.middleware.use ActionDispatch::Session::CookieStore, key: "_interslice_session"
+    end
   end
 end
