@@ -9,8 +9,8 @@ class SendGridService
 
   def deliver!(mail)
     @mail = mail
-    sg = SendGrid::API.new(api_key: api_key)
-    response = sg.client.mail._('send').post(request_body: request_body)
+    sg = SendGrid::API.new(api_key:)
+    response = sg.client.mail._('send').post(request_body:)
     raise response.inspect if response.status_code.to_i >= 300
 
     response.body
