@@ -45,7 +45,6 @@ module App
 
     config.active_storage.routes_prefix = '/attachments'
 
-    config.middleware.use ActionDispatch::Flash
     if Rails.env.development?
       config.middleware.use ActionDispatch::Cookies
       config.middleware.use ActionDispatch::Flash
