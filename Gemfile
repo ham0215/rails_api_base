@@ -5,8 +5,6 @@ gem 'rails'
 gem 'mysql2'
 gem 'puma'
 
-gem "lograge"
-
 gem 'seed-fu'
 
 gem 'config'
