@@ -75,11 +75,11 @@ Rails.application.configure do
     logger.formatter = proc do |severity, datetime, progname, message|
       request_id = message.match(/\[(.*?)\].*/)[1] rescue ''
       entry = {
-        severity:,
+        severity: severity,
         progname: progname || 'rails',
-        request_id:,
-        datetime:,
-        message:
+        request_id: request_id,
+        datetime: datetime,
+        message: message
       }
       "#{entry.to_json}\n"
     end
