@@ -37,7 +37,7 @@ jobs:
         volumes:
           - mysql-confd:/etc/mysql/conf.d
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1.99.0
         with:
