@@ -20,6 +20,7 @@ gem 'graphql-batch'
 gem 'apollo_upload_server'
 
 gem 'sorbet-runtime'
+gem 'sorbet-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +48,7 @@ group :development do
   gem 'sprockets-rails', require: 'sprockets/railtie'
 
   gem 'sorbet'
+  gem 'tapioca', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
