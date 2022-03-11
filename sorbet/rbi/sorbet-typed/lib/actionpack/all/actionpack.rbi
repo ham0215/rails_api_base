@@ -210,10 +210,10 @@ module ActionController::Helpers::ClassMethods
   def helpers; end
 end
 
-class ActionController::InvalidAuthenticityToken < ::ActionController::ActionControllerError
+class ActionController::InvalidAuthenticityToken < ActionController
 end
 
-class ActionController::InvalidCrossOriginRequest < ::ActionController::ActionControllerError
+class ActionController::InvalidCrossOriginRequest < ActionController
 end
 
 class ActionController::Metal < AbstractController::Base
@@ -238,7 +238,7 @@ module ActionController::MimeResponds
   sig do
     params(
       mimes: T.nilable(Symbol),
-      block: T.nilable(T.proc.params(arg0: ActionController::MimeResponds::Collector).void)
+      block: T.nilable(T.proc.params(arg0: ActiveSupport::Inflector).void)
     ).void
   end
   def respond_to(*mimes, &block); end
@@ -309,13 +309,13 @@ module ActionController::StrongParameters
   def params; end
 end
 
-class ActionController::UnknownFormat < ::ActionController::ActionControllerError
+class ActionController::UnknownFormat < ActionController
 end
 
-class ActionController::UnknownHttpMethod < ::ActionController::ActionControllerError
+class ActionController::UnknownHttpMethod < ActionController
 end
 
-class ActionController::UrlGenerationError < ::ActionController::ActionControllerError
+class ActionController::UrlGenerationError < ActionController
 end
 
 module ActionDispatch::Http::Parameters
@@ -329,10 +329,10 @@ end
 
 # these methods are delegated out, sorbet gets confused with them
 class ActionDispatch::IntegrationTest
-  sig { returns(ActionDispatch::Flash::FlashHash) }
+  sig { returns(ActionController::Flash::FlashHash) }
   def flash; end
 
-  sig { returns(ActionDispatch::Request::Session) }
+  sig { returns(Net::NTLM::Client::Session) }
   def session; end
 end
 
@@ -435,7 +435,7 @@ ActionDispatch::Response::LOCATION = T.let(T.unsafe(nil), String)
 
 ActionDispatch::Response::NO_CONTENT_CODES = T.let(T.unsafe(nil), T::Array[T.untyped])
 
-ActionDispatch::Response::NullContentTypeHeader = T.let(T.unsafe(nil), ActionDispatch::Response::ContentTypeHeader)
+ActionDispatch::Response::NullContentTypeHeader = T.let(T.unsafe(nil), ActionDispatch::Response::NullContentTypeHeader)
 
 ActionDispatch::Response::SET_COOKIE = T.let(T.unsafe(nil), String)
 
@@ -1119,13 +1119,13 @@ module ActionDispatch::Routing::Mapper::Resources
   def shallow?; end
 end
 
-Mime::ALL = T.let(T.unsafe(nil), Mime::AllType)
+Mime::ALL = T.let(T.unsafe(nil), Mime::Type)
 
 Mime::EXTENSION_LOOKUP = T.let(T.unsafe(nil), T::Hash[T.untyped, T.untyped])
 
 Mime::LOOKUP = T.let(T.unsafe(nil), T::Hash[T.untyped, T.untyped])
 
-Mime::SET = T.let(T.unsafe(nil), Mime::Mimes)
+Mime::SET = T.let(T.unsafe(nil), Mime)
 
 Mime::Type::MIME_NAME = T.let(T.unsafe(nil), String)
 

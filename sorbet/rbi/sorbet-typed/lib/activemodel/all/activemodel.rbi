@@ -48,7 +48,7 @@ class ActiveModel::ForbiddenAttributesError < ::StandardError
 end
 
 module ActiveModel::Model
-  include(::ActiveModel::AttributeAssignment)
+  include(ActiveRecord::AttributeAssignment)
   extend(::ActiveSupport::Concern)
 
   include(::ActiveSupport::Callbacks)
