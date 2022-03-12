@@ -47,6 +47,7 @@ group :development do
   gem 'sprockets-rails', require: 'sprockets/railtie'
 
   gem 'sorbet'
+  gem 'tapioca', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
