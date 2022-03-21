@@ -1,4 +1,4 @@
-FROM ruby:3.1.1-alpine3.15
+FROM ruby:3.1.1-alpine3.15 as builder
 
 RUN apk update && \
     apk add --no-cache \
@@ -23,6 +23,20 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 RUN apk del build-packs
+
+FROM ruby:3.1.1-alpine3.15
+
+RUN apk update && \
+    apk add \
+    mysql-client \
+    mysql-dev \
+    bash \
+    tzdata
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY --from=builder /usr/local/bundle /usr/local/bundle
 
 COPY . .
 
