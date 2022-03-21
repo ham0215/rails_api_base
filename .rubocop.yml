@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - 'bin/**/*'
+    - '.irbrc'
     - 'config/**/*'
     - 'config.ru'
     - 'db/**/*'
