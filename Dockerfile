@@ -1,15 +1,19 @@
-FROM ruby:3.1.1
+FROM ruby:3.1.1-alpine3.15 as builder
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    vim \
-    locales \
-    locales-all \
-    default-mysql-client \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-ENV LANG ja_JP.UTF-8
+RUN apk update && \
+    apk add --no-cache \
+    gcc \
+    g++ \
+    libc-dev \
+    libxml2-dev \
+    linux-headers \
+    make \
+    mysql-client \
+    mysql-dev \
+    tzdata && \
+    apk add --virtual build-packs --no-cache \
+    build-base \
+    curl-dev
 
 RUN mkdir /app
 WORKDIR /app
@@ -18,6 +22,21 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
+RUN apk del build-packs
+
+FROM ruby:3.1.1-alpine3.15
+
+RUN apk update && \
+    apk add \
+    mysql-client \
+    mysql-dev \
+    bash \
+    tzdata
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY --from=builder /usr/local/bundle /usr/local/bundle
 
 COPY . .
 
