@@ -39,7 +39,25 @@ class User < ApplicationRecord
       FileUtils.mkdir_p(tmp_dir)
       where(id: user_ids).each do |user|
         File.open(tmp_dir.join(user.avatar.filename.to_s), 'wb') do |file|
-          user.avatar.download {|chunk| file.write(chunk) }
+          user.avatar.download { |chunk| file.write(chunk) }
+        end
+      end
+
+      # rubyzipを使ってZIPファイルを生成する
+      Zip::File.open(Rails.root.join('tmp', 'avatars.zip'), create: true) do |zipfile|
+        Dir.glob(tmp_dir.join('*')).each do |path|
+          zipfile.add(File.basename(path), path)
+        end
+      end
+    end
+
+    def save_selected_avatars1(user_ids)
+      # Active Storageのファイルをローカルにダウンロードする
+      tmp_dir = Rails.root.join('tmp', 'avatars')
+      FileUtils.mkdir_p(tmp_dir)
+      where(id: user_ids).each do |user|
+        File.open(tmp_dir.join(user.avatar.filename.to_s), 'wb') do |file|
+          user.avatar.download { |chunk| file.write(chunk) }
         end
       end
 
