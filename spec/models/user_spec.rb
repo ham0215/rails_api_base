@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
     let(:zip_file_path) { Rails.root.join('tmp', 'avatars.zip') }
 
     before do
-      FileUtils.rm_f(tmp_dir)
+      FileUtils.rm_rf(tmp_dir)
       FileUtils.rm_f(zip_file_path)
     end
 
