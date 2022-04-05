@@ -32,6 +32,12 @@ class User < ApplicationRecord
     AssociationLoader.for(User, :sorted_books).load(self)
   end
 
+  class << self
+    def save_selected_avatars(user_ids)
+      # TODO: user_idsで指定したユーザーのavatarを1つのzipファイルに圧縮して保存する
+    end
+  end
+
   private
 
   def ng_name
