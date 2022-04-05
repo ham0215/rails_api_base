@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :locale, presence: true, inclusion: { in: locales.keys }
 
   has_one_attached :avatar
-  validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 4.megabytes }
+  validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 15.megabytes }
 
   def profile_loader
     AssociationLoader.for(User, :profile).load(self)
@@ -34,7 +34,21 @@ class User < ApplicationRecord
 
   class << self
     def save_selected_avatars(user_ids)
-      # TODO: user_idsで指定したユーザーのavatarを1つのzipファイルに圧縮して保存する
+      # Active Storageのファイルをローカルにダウンロードする
+      tmp_dir = Rails.root.join('tmp', 'avatars')
+      FileUtils.mkdir_p(tmp_dir)
+      where(id: user_ids).each do |user|
+        File.open(tmp_dir.join(user.avatar.filename.to_s), 'wb') do |file|
+          user.avatar.download {|chunk| file.write(chunk) }
+        end
+      end
+
+      # rubyzipを使ってZIPファイルを生成する
+      Zip::File.open(Rails.root.join('tmp', 'avatars.zip'), create: true) do |zipfile|
+        Dir.glob(tmp_dir.join('*')).each do |path|
+          zipfile.add(File.basename(path), path)
+        end
+      end
     end
   end
 
