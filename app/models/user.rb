@@ -36,7 +36,7 @@ class User < ApplicationRecord
     def save_selected_avatars(user_ids)
       Zip::OutputStream.open(Rails.root.join('tmp', 'avatars.zip')) do |out|
         where(id: user_ids).with_attached_avatar.each do |user|
-          out.put_next_entry("#{user.id}_#{user.avatar.filename.to_s}")
+          out.put_next_entry("#{user.id}_#{user.avatar.filename}")
           user.avatar.download { |chunk| out.write(chunk) }
         end
       end
@@ -45,7 +45,7 @@ class User < ApplicationRecord
     def save_selected_avatars2(user_ids)
       buffer = Zip::OutputStream.write_buffer do |out|
         where(id: user_ids).each do |user|
-          out.put_next_entry("#{user.id}_#{user.avatar.filename.to_s}")
+          out.put_next_entry("#{user.id}_#{user.avatar.filename}")
           user.avatar.download { |chunk| out.write(chunk) }
         end
       end
@@ -58,7 +58,7 @@ class User < ApplicationRecord
       tmp_dir = Rails.root.join('tmp', 'avatars')
       FileUtils.mkdir_p(tmp_dir)
       where(id: user_ids).each do |user|
-        File.open(tmp_dir.join("#{user.id}_#{user.avatar.filename.to_s}"), 'wb') do |file|
+        File.open(tmp_dir.join("#{user.id}_#{user.avatar.filename}"), 'wb') do |file|
           user.avatar.download { |chunk| file.write(chunk) }
         end
       end
