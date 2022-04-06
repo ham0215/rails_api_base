@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :locale, presence: true, inclusion: { in: locales.keys }
 
   has_one_attached :avatar
-  validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 4.megabytes }
+  validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 15.megabytes }
 
   def profile_loader
     AssociationLoader.for(User, :profile).load(self)
@@ -30,6 +30,46 @@ class User < ApplicationRecord
 
   def books_loader
     AssociationLoader.for(User, :sorted_books).load(self)
+  end
+
+  class << self
+    def save_selected_avatars(user_ids)
+      Zip::OutputStream.open(Rails.root.join('tmp', 'avatars.zip')) do |out|
+        where(id: user_ids).with_attached_avatar.each do |user|
+          out.put_next_entry("#{user.id}_#{user.avatar.filename}")
+          user.avatar.download { |chunk| out.write(chunk) }
+        end
+      end
+    end
+
+    def save_selected_avatars2(user_ids)
+      buffer = Zip::OutputStream.write_buffer do |out|
+        where(id: user_ids).each do |user|
+          out.put_next_entry("#{user.id}_#{user.avatar.filename}")
+          user.avatar.download { |chunk| out.write(chunk) }
+        end
+      end
+
+      File.open(Rails.root.join('tmp', 'avatars.zip'), 'wb') { _1.write(buffer.string) }
+    end
+
+    def save_selected_avatars1(user_ids)
+      # Active Storageのファイルをローカルにダウンロードする
+      tmp_dir = Rails.root.join('tmp', 'avatars')
+      FileUtils.mkdir_p(tmp_dir)
+      where(id: user_ids).each do |user|
+        File.open(tmp_dir.join("#{user.id}_#{user.avatar.filename}"), 'wb') do |file|
+          user.avatar.download { |chunk| file.write(chunk) }
+        end
+      end
+
+      # rubyzipを使ってZIPファイルを生成する
+      Zip::File.open(Rails.root.join('tmp', 'avatars.zip'), create: true) do |zipfile|
+        Dir.glob(tmp_dir.join('*')).each do |path|
+          zipfile.add(File.basename(path), path)
+        end
+      end
+    end
   end
 
   private
