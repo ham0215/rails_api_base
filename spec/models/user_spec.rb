@@ -5,15 +5,11 @@ RSpec.describe User, type: :model do
     subject { User.save_selected_avatars(users.map(&:id)) }
 
     let(:users) do
-       [
-         create(:user, avatar:),
-         create(:user, avatar: avatar1),
-         create(:user, avatar: avatar2),
-       ]
+      10.times.map do |i|
+        create(:user, avatar:)
+      end
     end
-    let(:avatar) { fixture_file_upload('11m.jpg', 'image/jpeg') }
-    let(:avatar1) { fixture_file_upload('ham2.jpg', 'image/jpeg') }
-    let(:avatar2) { fixture_file_upload('ham3.jpg', 'image/jpeg') }
+    let(:avatar) { fixture_file_upload('ham.jpg', 'image/jpeg') }
     let(:tmp_dir) { Rails.root.join('tmp', 'avatars') }
     let(:zip_file_path) { Rails.root.join('tmp', 'avatars.zip') }
 
@@ -26,9 +22,10 @@ RSpec.describe User, type: :model do
       subject
       expect(File.exist?(zip_file_path)).to be true
       Zip::File.open(zip_file_path) do |zip_file|
-        expect(zip_file.count).to eq(3)
+        expect(zip_file.count).to eq(10)
         zip_file.each_with_index do |entry, i|
-          expect(entry.name).to eq users[i].avatar.filename.to_s
+          user = users[i]
+          expect(entry.name).to eq "#{user.id}_#{user.avatar.filename.to_s}"
         end
       end
     end
