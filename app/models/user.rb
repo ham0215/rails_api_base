@@ -38,7 +38,6 @@ class User < ApplicationRecord
         where(id: user_ids).with_attached_avatar.each do |user|
           out.put_next_entry("#{user.id}_#{user.avatar.filename.to_s}")
           user.avatar.download { |chunk| out.write(chunk) }
-          debugger
         end
       end
     end
