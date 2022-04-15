@@ -35,7 +35,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1.100.1
         with:
-          ruby-version: 3.1.0
+          ruby-version: 3.1.2
           bundler-cache: true
       - name: apt-get
         run: |
