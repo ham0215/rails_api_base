@@ -1,4 +1,4 @@
-# parents
+# set_null_children
 
 ## Description
 
@@ -6,12 +6,14 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `parents` (
+CREATE TABLE `set_null_children` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `status` tinyint unsigned NOT NULL DEFAULT '0',
+  `parent_id` bigint DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `parent_id` (`parent_id`),
+  CONSTRAINT `parent_id_on_set_null_children` FOREIGN KEY (`parent_id`) REFERENCES `parents` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
@@ -21,8 +23,8 @@ CREATE TABLE `parents` (
 
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
-| id | bigint |  | false | auto_increment | [cascade_children](cascade_children.md) [children](children.md) [set_null_children](set_null_children.md) |  |  |
-| status | tinyint unsigned | 0 | false |  |  |  |  |
+| id | bigint |  | false | auto_increment |  |  |  |
+| parent_id | bigint |  | true |  |  | [parents](parents.md) |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -30,17 +32,19 @@ CREATE TABLE `parents` (
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| parent_id_on_set_null_children | FOREIGN KEY | FOREIGN KEY (parent_id) REFERENCES parents (id) |
 | PRIMARY | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes
 
 | Name | Definition |
 | ---- | ---------- |
+| parent_id | KEY parent_id (parent_id) USING BTREE |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
 
 ## Relations
 
-![er](parents.svg)
+![er](set_null_children.svg)
 
 ---
 
