@@ -7,14 +7,23 @@ RSpec.describe Parent, type: :model do
     let(:parent) { create(:parent) }
 
     context 'RESTRICT' do
-      let(:children) { create_list(:child, 3, parent:)}
-      before do
-        children
+      it 'destroys the parent' do
+        subject
+        expect(Parent.exists?(parent.id)).to be false
       end
 
-      it 'destroys the parent' do
-        expect { subject }.to raise_error(ActiveRecord::InvalidForeignKey)
-        expect(Child.all.count).to eq 3
+      context 'has children' do
+        let(:children) { create_list(:child, 3, parent:)}
+        before do
+          children
+        end
+
+        it 'destroys the parent' do
+          expect { subject }.to raise_error(ActiveRecord::DeleteRestrictionError)
+          # expect { subject }.to raise_error(ActiveRecord::InvalidForeignKey)
+          expect(Parent.exists?(parent.id)).to be false
+          expect(Child.all.count).to eq 3
+        end
       end
     end
 
@@ -27,6 +36,7 @@ RSpec.describe Parent, type: :model do
 
       it 'destroys the parent' do
         subject
+        expect(Parent.exists?(parent.id)).to be false
         expect(CascadeChild.all.count).to eq 0
       end
     end
@@ -40,6 +50,7 @@ RSpec.describe Parent, type: :model do
 
       it 'destroys the parent' do
         subject
+        expect(Parent.exists?(parent.id)).to be false
         expect(SetNullChild.all.count).to eq 3
         expect(SetNullChild.where(id: children.map(&:id)).all? { _1.parent_id.nil? } ).to eq true
       end
