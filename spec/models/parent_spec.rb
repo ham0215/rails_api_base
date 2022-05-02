@@ -20,8 +20,7 @@ RSpec.describe Parent, type: :model do
 
         it 'destroys the parent' do
           expect { subject }.to raise_error(ActiveRecord::DeleteRestrictionError)
-          # expect { subject }.to raise_error(ActiveRecord::InvalidForeignKey)
-          expect(Parent.exists?(parent.id)).to be false
+          expect(Parent.exists?(parent.id)).to be true
           expect(Child.all.count).to eq 3
         end
       end
