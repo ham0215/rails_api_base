@@ -10,6 +10,7 @@
 | [ar_internal_metadata](ar_internal_metadata.md) | 4 |  | BASE TABLE |
 | [book_images](book_images.md) | 4 |  | BASE TABLE |
 | [books](books.md) | 4 |  | BASE TABLE |
+| [cascade_children](cascade_children.md) | 4 |  | BASE TABLE |
 | [children](children.md) | 4 |  | BASE TABLE |
 | [fugas](fugas.md) | 7 |  | BASE TABLE |
 | [hoges](hoges.md) | 6 |  | BASE TABLE |
@@ -19,6 +20,7 @@
 | [portfolios](portfolios.md) | 6 |  | BASE TABLE |
 | [profiles](profiles.md) | 5 |  | BASE TABLE |
 | [schema_migrations](schema_migrations.md) | 1 |  | BASE TABLE |
+| [set_null_children](set_null_children.md) | 4 |  | BASE TABLE |
 | [skills](skills.md) | 5 |  | BASE TABLE |
 | [user_books](user_books.md) | 5 |  | BASE TABLE |
 | [users](users.md) | 7 |  | BASE TABLE |

@@ -13,7 +13,7 @@ CREATE TABLE `children` (
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`),
-  CONSTRAINT `parent_id_on_children` FOREIGN KEY (`parent_id`) REFERENCES `parents` (`id`) ON DELETE CASCADE
+  CONSTRAINT `parent_id_on_children` FOREIGN KEY (`parent_id`) REFERENCES `parents` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
