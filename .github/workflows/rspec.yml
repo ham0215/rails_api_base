@@ -14,6 +14,10 @@ on:
       - Dockerfile
       - docker-compose.yml
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   rspec:
     runs-on: ubuntu-latest
