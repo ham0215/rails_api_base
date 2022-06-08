@@ -22,6 +22,8 @@
 | [schema_migrations](schema_migrations.md) | 1 |  | BASE TABLE |
 | [set_null_children](set_null_children.md) | 4 |  | BASE TABLE |
 | [skills](skills.md) | 5 |  | BASE TABLE |
+| [sub_model_books](sub_model_books.md) | 5 |  | BASE TABLE |
+| [sub_model_users](sub_model_users.md) | 3 |  | BASE TABLE |
 | [user_books](user_books.md) | 5 |  | BASE TABLE |
 | [users](users.md) | 7 |  | BASE TABLE |
 
