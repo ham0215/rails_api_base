@@ -246,6 +246,32 @@ CREATE TABLE `skills` (
   CONSTRAINT `profile_id_on_skills` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `sub_model_books`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sub_model_books` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `sub_model_user_id` bigint NOT NULL,
+  `user_id` bigint NOT NULL,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sub_model_user_id` (`sub_model_user_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `sub_model_user_id_on_sub_model_users` FOREIGN KEY (`sub_model_user_id`) REFERENCES `sub_model_users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `user_id_on_sub_model_users` FOREIGN KEY (`user_id`) REFERENCES `sub_model_users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `sub_model_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sub_model_users` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `user_books`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -309,6 +335,8 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20211220083750'),
 ('20211220083751'),
 ('20220419020531'),
-('20220419020549');
+('20220419020549'),
+('20220608083414'),
+('20220608083439');
 
 

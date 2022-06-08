@@ -4,6 +4,7 @@ RUN apk update && \
     apk add --no-cache \
     gcc \
     g++ \
+    gcompat \
     libc-dev \
     libxml2-dev \
     linux-headers \
@@ -28,6 +29,7 @@ FROM ruby:3.1.2-alpine3.15
 
 RUN apk update && \
     apk add \
+    gcompat \
     mysql-client \
     mysql-dev \
     bash \
