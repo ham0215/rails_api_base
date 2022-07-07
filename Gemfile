@@ -45,6 +45,9 @@ group :development do
   gem 'graphiql-rails'
 
   gem 'sprockets-rails', require: 'sprockets/railtie'
+
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
