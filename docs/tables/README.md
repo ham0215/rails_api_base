@@ -15,6 +15,7 @@
 | [fugas](fugas.md) | 7 |  | BASE TABLE |
 | [hoges](hoges.md) | 6 |  | BASE TABLE |
 | [locks](locks.md) | 3 |  | BASE TABLE |
+| [null_uniq_columns](null_uniq_columns.md) | 4 |  | BASE TABLE |
 | [parents](parents.md) | 4 |  | BASE TABLE |
 | [piyos](piyos.md) | 6 |  | BASE TABLE |
 | [portfolios](portfolios.md) | 6 |  | BASE TABLE |

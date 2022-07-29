@@ -157,6 +157,18 @@ CREATE TABLE `locks` (
   KEY `not_unique` (`not_unique`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `null_uniq_columns`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `null_uniq_columns` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `status` tinyint unsigned DEFAULT NULL,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `status` (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `parents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -337,6 +349,7 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20220419020531'),
 ('20220419020549'),
 ('20220608083414'),
-('20220608083439');
+('20220608083439'),
+('20220729000623');
 
 
