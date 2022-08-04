@@ -17,7 +17,7 @@ gem 'active_storage_validations'
 
 gem 'graphql'
 gem 'graphql-batch'
-gem 'apollo_upload_server'
+gem 'apollo_upload_server', github: 'ham0215/apollo_upload_server-ruby', branch: "remove_rack"
 
 gem 'rubyzip', require: 'zip'
 
