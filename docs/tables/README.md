@@ -11,9 +11,12 @@
 | [book_images](book_images.md) | 4 |  | BASE TABLE |
 | [books](books.md) | 4 |  | BASE TABLE |
 | [cascade_children](cascade_children.md) | 4 |  | BASE TABLE |
+| [characters](characters.md) | 6 |  | BASE TABLE |
 | [children](children.md) | 4 |  | BASE TABLE |
+| [droids](droids.md) | 4 |  | BASE TABLE |
 | [fugas](fugas.md) | 7 |  | BASE TABLE |
 | [hoges](hoges.md) | 6 |  | BASE TABLE |
+| [humen](humen.md) | 4 |  | BASE TABLE |
 | [locks](locks.md) | 3 |  | BASE TABLE |
 | [null_uniq_columns](null_uniq_columns.md) | 4 |  | BASE TABLE |
 | [parents](parents.md) | 4 |  | BASE TABLE |
