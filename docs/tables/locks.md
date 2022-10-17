@@ -12,7 +12,7 @@ CREATE TABLE `locks` (
   `not_index` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `not_unique` (`not_unique`)
-) ENGINE=InnoDB AUTO_INCREMENT=[Redacted by tbls] DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
 </details>

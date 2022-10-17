@@ -18,7 +18,7 @@ CREATE TABLE `fugas` (
   KEY `hoge_id` (`hoge_id`),
   KEY `idx_num` (`idx_num`),
   CONSTRAINT `hoge_id_on_fugas` FOREIGN KEY (`hoge_id`) REFERENCES `hoges` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=[Redacted by tbls] DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
 </details>
