@@ -14,7 +14,7 @@ CREATE TABLE `active_storage_blobs` (
   `metadata` text COLLATE utf8mb4_general_ci,
   `service_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `byte_size` bigint NOT NULL,
-  `checksum` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `checksum` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_active_storage_blobs_on_key` (`key`)
