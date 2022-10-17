@@ -13,7 +13,7 @@ services:
   redis:
     image: redis:6.0.9
     ports:
-      - '6380:6379'
+      - '6389:6379'
   api:
     tty: true
     stdin_open: true

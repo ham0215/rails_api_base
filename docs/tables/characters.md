@@ -1,4 +1,4 @@
-# piyos
+# characters
 
 ## Description
 
@@ -6,16 +6,15 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `piyos` (
+CREATE TABLE `characters` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `idx_num` int NOT NULL DEFAULT '0',
-  `num` int NOT NULL DEFAULT '0',
-  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `char_type` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `char_id` bigint NOT NULL,
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idx_num` (`idx_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=[Redacted by tbls] DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
 </details>
@@ -25,9 +24,9 @@ CREATE TABLE `piyos` (
 | Name | Type | Default | Nullable | Extra Definition | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | ---------------- | -------- | ------- | ------- |
 | id | bigint |  | false | auto_increment |  |  |  |
-| idx_num | int | 0 | false |  |  |  |  |
-| num | int | 0 | false |  |  |  |  |
-| name | varchar(255) |  | true |  |  |  |  |
+| name | varchar(255) |  | false |  |  |  |  |
+| char_type | varchar(20) |  | false |  |  |  |  |
+| char_id | bigint |  | false |  |  |  |  |
 | created_at | datetime(6) |  | false |  |  |  |  |
 | updated_at | datetime(6) |  | false |  |  |  |  |
 
@@ -41,12 +40,11 @@ CREATE TABLE `piyos` (
 
 | Name | Definition |
 | ---- | ---------- |
-| idx_num | KEY idx_num (idx_num) USING BTREE |
 | PRIMARY | PRIMARY KEY (id) USING BTREE |
 
 ## Relations
 
-![er](piyos.svg)
+![er](characters.svg)
 
 ---
 
