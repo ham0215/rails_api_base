@@ -54,3 +54,19 @@ Lock.seed(:id,
   { id: 9, not_unique: 109, not_index: 209 },
 )
 
+Human.seed(:id,
+  { id: 1, height: 169 },
+  { id: 2, height: 182 },
+)
+
+Droid.seed(:id,
+  { id: 1, primary_function: 'func1' },
+  { id: 2, primary_function: 'func2' },
+)
+
+Character.seed(:id,
+  { id: 1, name: 'ham human', char_id: 1, char_type: 'Human' },
+  { id: 2, name: 'ham droid', char_id: 1, char_type: 'Droid' },
+  { id: 3, name: 'ham2 human', char_id: 2, char_type: 'Human' },
+  { id: 4, name: 'ham2 droid', char_id: 2, char_type: 'Droid' },
+)
