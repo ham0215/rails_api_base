@@ -34,4 +34,6 @@ class AppSchema < GraphQL::Schema
     # find an object in your application
     # ...
   end
+
+  validate_max_errors(100)
 end
