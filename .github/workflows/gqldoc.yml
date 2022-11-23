@@ -17,7 +17,7 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - name: Push Generated GraphQL Document Current Branch
-        uses: Code-Hex/gqldoc-actions@v1.0.8
+        uses: Code-Hex/gqldoc-actions@v1.0.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           schema: docs/graphql/schema.graphql
