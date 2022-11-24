@@ -17,22 +17,22 @@ https://qiita.com/ham0215/items/54287e3793ed81558425
 ### docker build
 
 ```console
-COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up --build -d
+docker compose up --build -d
 ```
 
 ### Database initialize
 
 ```console
-docker-compose exec api rails db:create
-docker-compose exec api rails db:schema:load
-docker-compose exec api rails db:test:prepare
-docker-compose exec api rails db:seed_fu
+docker compose exec api rails db:create
+docker compose exec api rails db:schema:load
+docker compose exec api rails db:test:prepare
+docker compose exec api rails db:seed_fu
 ```
 
 ### Run rails server
 
 ```console
-docker-compose exec api rails s -b 0.0.0.0
+docker compose exec api rails s -b 0.0.0.0
 ```
 
 ## GraphQL
@@ -42,7 +42,7 @@ docker-compose exec api rails s -b 0.0.0.0
 下記コマンドでスキーマファイルを生成できます。
 
 ```console
-docker-compose exec api rails graphql:schema:dump
+docker compose exec api rails graphql:schema:dump
 ```
 
 ### GraphiQL
@@ -98,7 +98,7 @@ http://localhost:3001/sidekiq
 
 ## credentials
 
-シークレット情報は credenaitls に格納している
+シークレット情報は credentials に格納している
 
 ```console
 # edit credentials. env: development, test
