@@ -27,6 +27,56 @@
 
 ---
 
+### BookConnection
+
+<p>The connection type for Book.</p>  
+
+#### Fields
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>edges</strong> (<a href="objects.md#bookedge">[BookEdge]</a>)</td> 
+    <td><p>A list of edges.</p></td>
+  </tr>
+  <tr>
+    <td><strong>nodes</strong> (<a href="objects.md#book">[Book]</a>)</td> 
+    <td><p>A list of nodes.</p></td>
+  </tr>
+  <tr>
+    <td><strong>pageInfo</strong> (<a href="objects.md#pageinfo">PageInfo!</a>)</td> 
+    <td><p>Information to aid in pagination.</p></td>
+  </tr>
+</table>
+
+---
+
+### BookEdge
+
+<p>An edge in a connection.</p>  
+
+#### Fields
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>cursor</strong> (<a href="scalars.md#string">String!</a>)</td> 
+    <td><p>A cursor for use in pagination.</p></td>
+  </tr>
+  <tr>
+    <td><strong>node</strong> (<a href="objects.md#book">Book</a>)</td> 
+    <td><p>The item at the end of the edge.</p></td>
+  </tr>
+</table>
+
+---
+
 ### BookImage
 
   

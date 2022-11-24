@@ -4,6 +4,24 @@
 
 
 
+### books
+
+#### Type: [BookConnection!](objects.md#bookconnection)
+
+本を取得する 
+
+#### Arguments
+
+| Name | Description |
+|------|-------------|
+| after ([String](scalars.md#string)) | <p>Returns the elements in the list that come after the specified cursor.</p> |
+| before ([String](scalars.md#string)) | <p>Returns the elements in the list that come before the specified cursor.</p> |
+| first ([Int](scalars.md#int)) | <p>Returns the first <em>n</em> elements from the list.</p> |
+| ids ([[Int!]!](scalars.md#int)) |  |
+| last ([Int](scalars.md#int)) | <p>Returns the last <em>n</em> elements from the list.</p> |
+
+---
+
 ### profile
 
 #### Type: [User!](objects.md#user)
