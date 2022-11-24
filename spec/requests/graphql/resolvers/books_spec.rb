@@ -24,8 +24,8 @@ RSpec.describe Resolvers::Books, type: :request do
 
     let(:query) do
       <<~"GQL"
-        query Books() {
-          books {
+        query Books($ids: [Int!]!) {
+          books(ids: $ids) {
             nodes {
               id
               title
