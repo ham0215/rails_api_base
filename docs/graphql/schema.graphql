@@ -3,6 +3,41 @@ type Book {
   title: String!
 }
 
+"""
+The connection type for Book.
+"""
+type BookConnection {
+  """
+  A list of edges.
+  """
+  edges: [BookEdge]
+
+  """
+  A list of nodes.
+  """
+  nodes: [Book]
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+}
+
+"""
+An edge in a connection.
+"""
+type BookEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge.
+  """
+  node: Book
+}
+
 type BookImage {
   book: Book!
   contentType: String!
@@ -46,6 +81,32 @@ type PageInfo {
 }
 
 type Query {
+  """
+  本を取得する
+  """
+  books(
+    """
+    Returns the elements in the list that come after the specified cursor.
+    """
+    after: String
+
+    """
+    Returns the elements in the list that come before the specified cursor.
+    """
+    before: String
+
+    """
+    Returns the first _n_ elements from the list.
+    """
+    first: Int
+    ids: [Int!]!
+
+    """
+    Returns the last _n_ elements from the list.
+    """
+    last: Int
+  ): BookConnection!
+
   """
   プロフィールを取得する
   """

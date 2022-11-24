@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe Resolvers::Users, type: :request do
-  describe 'users' do
+RSpec.describe Resolvers::Books, type: :request do
+  describe 'books' do
     subject { post graphql_path, params: params }
 
     let(:params) { { query: query, variables: variables.to_json } }
-    let(:variables) { {} }
+    let(:variables) { { ids: books.map(&:id)} }
 
-    let(:users) { create_list(:user, 3) }
+    let(:books) { create_list(:book, 3) }
 
     before do
-      users
+      books
     end
 
-    shared_examples 'get users' do
+    shared_examples 'get books' do
       it do
         subject
         body = JSON.parse(response.body)
@@ -24,16 +24,17 @@ RSpec.describe Resolvers::Users, type: :request do
 
     let(:query) do
       <<~"GQL"
-        query Users {
-          users {
+        query Books() {
+          books {
             nodes {
-              name
+              id
+              title
             }
           }
         }
       GQL
     end
 
-    it_behaves_like 'get users'
+    it_behaves_like 'get books'
   end
 end

@@ -9,5 +9,6 @@ module Types
     field :users, resolver: Resolvers::Users
     field :viewer, resolver: Resolvers::Viewer
     field :profile, resolver: Resolvers::Profile
+    field :books, resolver: Resolvers::Books
   end
 end
