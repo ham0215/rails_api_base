@@ -313,6 +313,8 @@ type User {
     last: Int
   ): PortfolioConnection!
   profile: Profile!
+  slowField: String!
+  slowField2: String!
 }
 
 """
