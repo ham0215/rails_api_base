@@ -38,7 +38,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1.145.0
         with:
-          ruby-version: 3.1.2
+          ruby-version: 3.2.2
           bundler-cache: true
       - name: bundle install
         run: |
