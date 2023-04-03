@@ -26,7 +26,7 @@ RSpec.describe Resolvers::Books, type: :request do
       expect(body['data'].deep_symbolize_keys).to eq({ viewer: { id: user.id } })
     end
 
-    context 'heavy fields' do
+    context 'slow fields' do
       let(:query) do
         <<~"GQL"
           query Viewer {

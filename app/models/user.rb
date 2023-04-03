@@ -21,12 +21,12 @@ class User < ApplicationRecord
   validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 15.megabytes }
 
   def slow_field
-    sleep(2)
+    sleep(5)
     'slow_field'
   end
 
   def slow_field2
-    sleep(2)
+    sleep(5)
     'slow_field2'
   end
 
