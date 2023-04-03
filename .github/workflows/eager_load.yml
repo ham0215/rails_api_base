@@ -17,7 +17,7 @@ on:
       - 'gcp/**'
 
 jobs:
-  reager-load:
+  eager-load:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
