@@ -21,12 +21,18 @@ class User < ApplicationRecord
   validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 15.megabytes }
 
   def slow_field
-    sleep(5)
+    5.times.each do
+      Rails.logger.info('slow_field')
+      sleep(1)
+    end
     'slow_field'
   end
 
   def slow_field2
-    sleep(5)
+    5.times.each do
+      Rails.logger.info('slow_field2')
+      sleep(1)
+    end
     'slow_field2'
   end
 

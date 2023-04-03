@@ -23,5 +23,13 @@ module Types
     def portfolios
       AssociationLoader.for(User, :sorted_portfolios).load(object)
     end
+
+    def slow_field
+      PromiseLoader.for(object).load(:slow_field)
+    end
+
+    def slow_field2
+      PromiseLoader.for(object).load(:slow_field2)
+    end
   end
 end
