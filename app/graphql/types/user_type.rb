@@ -6,6 +6,8 @@ module Types
     field :name, String, null: false
     field :email, String, null: false
     field :nickname, String, null: false
+    field :slow_field, String, null: false
+    field :slow_field2, String, null: false
     field :books, Types::BookType.connection_type, null: false
     field :profile, Types::ProfileType, null: false
     field :portfolios, Types::PortfolioType.connection_type, null: false
