@@ -10,5 +10,13 @@ module Types
     field :viewer, resolver: Resolvers::Viewer
     field :profile, resolver: Resolvers::Profile
     field :books, resolver: Resolvers::Books
+
+    field :user, Types::UserType, null: true do
+      argument :id, Int, required: true
+    end
+
+    def user(id:)
+      User.find id
+    end
   end
 end

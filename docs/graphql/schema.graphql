@@ -178,6 +178,7 @@ type Query {
   プロフィールを取得する
   """
   profile(userId: Int!): User!
+  user(id: Int!): User
 
   """
   ユーザー一覧を取得する
