@@ -20,18 +20,6 @@ class User < ApplicationRecord
   has_one_attached :avatar
   validates :avatar, content_type: %i[png jpg jpeg], size: { less_than: 15.megabytes }
 
-  def profile_loader
-    AssociationLoader.for(User, :profile).load(self)
-  end
-
-  def portfolios_loader
-    AssociationLoader.for(User, :sorted_portfolios).load(self)
-  end
-
-  def books_loader
-    AssociationLoader.for(User, :sorted_books).load(self)
-  end
-
   class << self
     def save_selected_avatars(user_ids)
       Zip::OutputStream.open(Rails.root.join('tmp', 'avatars.zip')) do |out|
