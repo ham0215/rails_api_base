@@ -21,7 +21,7 @@ jobs:
       DB_PORT: 33060
     services:
       db:
-        image: mysql:8.0.33
+        image: mysql:8.0.34
         volumes:
           - mysqlconf.d:/etc/mysql/conf.d
         ports:
