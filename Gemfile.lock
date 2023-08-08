@@ -137,7 +137,7 @@ GEM
     graphiql-rails (1.9.0)
       railties
       sprockets-rails
-    graphql (2.0.25)
+    graphql (2.0.26)
     graphql-batch (0.5.2)
       graphql (>= 1.10, < 3)
       promise.rb (~> 0.7.2)
