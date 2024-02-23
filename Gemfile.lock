@@ -152,8 +152,8 @@ GEM
       sprockets-rails
     graphql (2.2.10)
       base64
-    graphql-batch (0.5.2)
-      graphql (>= 1.10, < 3)
+    graphql-batch (0.6.0)
+      graphql (>= 1.12.18, < 3)
       promise.rb (~> 0.7.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
