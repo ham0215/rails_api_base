@@ -149,7 +149,7 @@ GEM
       activesupport (>= 6.1)
     graphiql-rails (1.10.0)
       railties
-    graphql (2.2.11)
+    graphql (2.2.12)
       base64
     graphql-batch (0.5.2)
       graphql (>= 1.10, < 3)
