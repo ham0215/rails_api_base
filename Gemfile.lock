@@ -144,12 +144,14 @@ GEM
     faker (3.4.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
+    fiber-storage (0.0.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     graphiql-rails (1.10.1)
       railties
-    graphql (2.3.7)
+    graphql (2.3.14)
       base64
+      fiber-storage
     graphql-batch (0.5.2)
       graphql (>= 1.10, < 3)
       promise.rb (~> 0.7.2)
