@@ -27,7 +27,7 @@ jobs:
       EAGER_LOAD: 1
     services:
       db:
-        image: mysql:8.4.2
+        image: mysql:9.1.0
         ports:
           - 33060:3306
         env:
