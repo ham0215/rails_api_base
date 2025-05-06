@@ -147,7 +147,7 @@ GEM
     fiber-storage (0.0.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    graphiql-rails (1.10.1)
+    graphiql-rails (1.10.4)
       railties
     graphql (2.3.21)
       base64
