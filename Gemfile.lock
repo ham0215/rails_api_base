@@ -301,7 +301,7 @@ GEM
       rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     ruby_http_client (3.5.5)
-    rubyzip (2.3.2)
+    rubyzip (2.4.1)
     securerandom (0.4.1)
     seed-fu (2.3.9)
       activerecord (>= 3.1)
