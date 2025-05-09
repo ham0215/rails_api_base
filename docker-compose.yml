@@ -11,7 +11,7 @@ services:
       - ./mysqlcnf.d:/etc/mysql/conf.d
       - ./tmp/mysql:/var/lib/mysql
   redis:
-    image: redis:6.0.9
+    image: redis:6.2.18
     ports:
       - '6389:6379'
   api:
