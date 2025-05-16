@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-alpine as builder
+FROM ruby:3.4.4-alpine as builder
 
 RUN apk update && \
     apk add --no-cache \
@@ -25,7 +25,7 @@ COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 RUN apk del build-packs
 
-FROM ruby:3.2.2-alpine
+FROM ruby:3.4.4-alpine
 
 RUN apk update && \
     apk add \
