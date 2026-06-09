@@ -190,7 +190,7 @@ GEM
       timeout
     net-smtp (0.5.1)
       net-protocol
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.18.8-aarch64-linux-musl)
       racc (~> 1.4)
     nokogiri (1.18.8-arm64-darwin)
@@ -206,7 +206,7 @@ GEM
     prettyprint (0.2.0)
     prism (1.4.0)
     promise.rb (0.7.4)
-    puma (6.6.0)
+    puma (8.0.2)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.16)
